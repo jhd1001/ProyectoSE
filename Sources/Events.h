@@ -39,6 +39,11 @@
 #include "TU1.h"
 #include "UTIL_H1.h"
 #include "MCUC1.h"
+#include "AD_H1.h"
+#include "AdcLdd1.h"
+#include "TI_H1.h"
+#include "TimerIntLdd1.h"
+#include "TU2.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -59,6 +64,54 @@ extern "C" {
 /* ===================================================================*/
 void Cpu_OnNMI(void);
 
+
+/*
+** ===================================================================
+**     Event       :  TI_H1_OnInterrupt (module Events)
+**
+**     Component   :  TI_H1 [TimerInt]
+**     Description :
+**         When a timer interrupt occurs this event is called (only
+**         when the component is enabled - <Enable> and the events are
+**         enabled - <EnableEvent>). This event is enabled only if a
+**         <interrupt service/event> is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void TI_H1_OnInterrupt(void);
+
+void AD_H1_OnEnd(void);
+/*
+** ===================================================================
+**     Event       :  AD_H1_OnEnd (module Events)
+**
+**     Component   :  AD_H1 [ADC]
+**     Description :
+**         This event is called after the measurement (which consists
+**         of <1 or more conversions>) is/are finished.
+**         The event is available only when the <Interrupt
+**         service/event> property is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+void AD_H1_OnCalibrationEnd(void);
+/*
+** ===================================================================
+**     Event       :  AD_H1_OnCalibrationEnd (module Events)
+**
+**     Component   :  AD_H1 [ADC]
+**     Description :
+**         This event is called when the calibration has been finished.
+**         User should check if the calibration pass or fail by
+**         Calibration status method./nThis event is enabled only if
+**         the <Interrupt service/event> property is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
 
 /* END Events */
 

@@ -53,12 +53,17 @@
   </PATHS>
   <FILES>
     <GeneratedCs>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\AD_H1.c</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\AdcLdd1.c</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\Cpu.c</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\MCUC1.c</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\PE_LDD.c</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\Pins1.c</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\TI_H1.c</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\TU1.c</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\TU2.c</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\TimeDateLdd1.c</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\TimerIntLdd1.c</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\TmDt_H1.c</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\UTIL_H1.c</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Project_Settings\Startup_Code\startup.c</PathName>
@@ -70,6 +75,8 @@
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Static_Code\System\Vectors.c</PathName>
     </GeneratedCs>
     <GeneratedHs>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\AD_H1.h</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\AdcLdd1.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\CPU_Config.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\Cpu.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\IO_Map.h</PathName>
@@ -81,8 +88,11 @@
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\PE_LDD.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\PE_Types.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\Pins1.h</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\TI_H1.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\TU1.h</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\TU2.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\TimeDateLdd1.h</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\TimerIntLdd1.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\TmDt_H1.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\UTIL_H1.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\UTIL_H1config.h</PathName>

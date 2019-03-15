@@ -55,6 +55,11 @@
 #include "TU1.h"
 #include "UTIL_H1.h"
 #include "MCUC1.h"
+#include "AD_H1.h"
+#include "AdcLdd1.h"
+#include "TI_H1.h"
+#include "TimerIntLdd1.h"
+#include "TU2.h"
 #include "Events.h"
 
 #ifdef __cplusplus
@@ -119,11 +124,11 @@ extern "C" {
 #define VECTOR_52         (tIsrFunc)&UnhandledInterrupt         /* 0x34 -    ivINT_UART2_ERR                unused by PE */
 #define VECTOR_53         (tIsrFunc)&UnhandledInterrupt         /* 0x35 -    ivINT_UART3_RX_TX              unused by PE */
 #define VECTOR_54         (tIsrFunc)&UnhandledInterrupt         /* 0x36 -    ivINT_UART3_ERR                unused by PE */
-#define VECTOR_55         (tIsrFunc)&UnhandledInterrupt         /* 0x37 -    ivINT_ADC0                     unused by PE */
+#define VECTOR_55         (tIsrFunc)&AdcLdd1_MeasurementCompleteInterrupt /* 0x37 112 ivINT_ADC0            used by PE */
 #define VECTOR_56         (tIsrFunc)&UnhandledInterrupt         /* 0x38 -    ivINT_CMP0                     unused by PE */
 #define VECTOR_57         (tIsrFunc)&UnhandledInterrupt         /* 0x39 -    ivINT_CMP1                     unused by PE */
 #define VECTOR_58         (tIsrFunc)&TU1_Interrupt              /* 0x3A 112  ivINT_FTM0                     used by PE */
-#define VECTOR_59         (tIsrFunc)&UnhandledInterrupt         /* 0x3B -    ivINT_FTM1                     unused by PE */
+#define VECTOR_59         (tIsrFunc)&TU2_Interrupt              /* 0x3B 112  ivINT_FTM1                     used by PE */
 #define VECTOR_60         (tIsrFunc)&UnhandledInterrupt         /* 0x3C -    ivINT_FTM2                     unused by PE */
 #define VECTOR_61         (tIsrFunc)&UnhandledInterrupt         /* 0x3D -    ivINT_CMT                      unused by PE */
 #define VECTOR_62         (tIsrFunc)&UnhandledInterrupt         /* 0x3E -    ivINT_RTC                      unused by PE */

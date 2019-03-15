@@ -37,6 +37,7 @@ extern "C" {
 
 
 /* User includes (#include below this line is not maintained by Processor Expert) */
+#include "JHA.h"
 
 /*
 ** ===================================================================
@@ -52,6 +53,35 @@ extern "C" {
 */
 /* ===================================================================*/
 void Cpu_OnNMI(void)
+{
+  /* Write your code here ... */
+}
+
+// cada 12.5 ms mide el potenciometro (CANAL 0)
+void TI_H1_OnInterrupt(void) {
+	AD_H1_MeasureChan(FALSE, 0);
+}
+
+// Interrupción del potenciomento, medida disponible
+void AD_H1_OnEnd(void) {
+	JHA_Factoriza();
+}
+
+/*
+** ===================================================================
+**     Event       :  AD_H1_OnCalibrationEnd (module Events)
+**
+**     Component   :  AD_H1 [ADC]
+**     Description :
+**         This event is called when the calibration has been finished.
+**         User should check if the calibration pass or fail by
+**         Calibration status method./nThis event is enabled only if
+**         the <Interrupt service/event> property is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void AD_H1_OnCalibrationEnd(void)
 {
   /* Write your code here ... */
 }

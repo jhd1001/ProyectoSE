@@ -8,7 +8,7 @@
 **     Repository  : Kinetis
 **     Datasheet   : K64P144M120SF5RM, Rev.2, January 2014
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-15, 17:36, # CodeGen: 1
+**     Date/Time   : 2019-03-15, 18:26, # CodeGen: 2
 **     Abstract    :
 **
 **     Settings    :
@@ -110,6 +110,11 @@ void Components_Init(void)
   (void)TimeDateLdd1_Init(NULL);
   MCUC1_Init(); /* ### McuLibConfig "MCUC1" init code ... */
   UTIL_H1_Init(); /* ### Utility "UTIL_H1" init code ... */
+  /* ### ADC "AD_H1" init code ... */
+  AD_H1_Init();
+  /* ### TimerInt_LDD "TimerIntLdd1" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
+  (void)TimerIntLdd1_Init(NULL);
+  /* ### TimerInt "TI_H1" init code ... */
 }
 #endif /* CPU_COMPONENTS_INIT */
 

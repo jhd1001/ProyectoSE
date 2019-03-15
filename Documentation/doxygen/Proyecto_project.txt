@@ -28,6 +28,9 @@
 \page page_components Components 
 - \subpage TU1
 - \subpage TimeDateLdd1
+- \subpage AdcLdd1
+- \subpage TU2
+- \subpage TimerIntLdd1
 
 */
 
@@ -62,6 +65,9 @@
 \page page_components Components 
 - \subpage TU1
 - \subpage TimeDateLdd1
+- \subpage AdcLdd1
+- \subpage TU2
+- \subpage TimerIntLdd1
 
 */
 
