@@ -54,10 +54,16 @@
   <FILES>
     <GeneratedCs>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\Cpu.c</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\MCUC1.c</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\PE_LDD.c</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\Pins1.c</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\TU1.c</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\TimeDateLdd1.c</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\TmDt_H1.c</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\UTIL_H1.c</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Project_Settings\Startup_Code\startup.c</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Sources\Events.c</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Sources\JHA.c</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Sources\main.c</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Static_Code\System\CPU_Init.c</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Static_Code\System\Peripherals_Init.c</PathName>
@@ -68,13 +74,21 @@
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\Cpu.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\IO_Map.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\Init_Config.h</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\MCUC1.h</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\MCUC1config.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\PE_Const.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\PE_Error.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\PE_LDD.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\PE_Types.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\Pins1.h</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\TU1.h</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\TimeDateLdd1.h</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\TmDt_H1.h</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\UTIL_H1.h</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\UTIL_H1config.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\Vectors_Config.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Sources\Events.h</PathName>
+      <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Sources\JHA.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Static_Code\IO_Map\MK64F12.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Static_Code\PDD\ADC_PDD.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Static_Code\PDD\CAN_PDD.h</PathName>

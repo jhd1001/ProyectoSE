@@ -31,6 +31,11 @@
 #include "Cpu.h"
 #include "Events.h"
 #include "Pins1.h"
+#include "TmDt_H1.h"
+#include "TimeDateLdd1.h"
+#include "TU1.h"
+#include "UTIL_H1.h"
+#include "MCUC1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -39,6 +44,8 @@
 #include "PDD_Includes.h"
 #include "Init_Config.h"
 /* User includes (#include below this line is not maintained by Processor Expert) */
+#include "stdio.h"
+#include "JHA.h"
 
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
 int main(void)
@@ -52,6 +59,7 @@ int main(void)
 
   /* Write your code here */
   /* For example: for(;;) { } */
+  JHA_Run();
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
   /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/

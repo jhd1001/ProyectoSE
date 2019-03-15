@@ -34,6 +34,11 @@
 #include "PE_Const.h"
 #include "IO_Map.h"
 #include "Pins1.h"
+#include "TmDt_H1.h"
+#include "TimeDateLdd1.h"
+#include "TU1.h"
+#include "UTIL_H1.h"
+#include "MCUC1.h"
 
 #ifdef __cplusplus
 extern "C" {

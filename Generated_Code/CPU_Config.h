@@ -6,7 +6,7 @@
 **     Version     : Component 01.046, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-14, 10:29, # CodeGen: 0
+**     Date/Time   : 2019-03-15, 17:36, # CodeGen: 1
 **
 **     Copyright : 1997 - 2015 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
@@ -710,7 +710,7 @@ typedef struct {
 
 /* Components_Init() parameterization settings */
 
-#define CPU_COMPONENTS_INIT                                0x00U     /* Components_Init() method is not called in PE_low_level_init() */ 
+#define CPU_COMPONENTS_INIT                                0x01U     /* Call Components_Init() method in PE_low_level_init() */ 
 
 /* Interrupts priority level settings */
   

@@ -8,7 +8,7 @@
 **     Repository  : Kinetis
 **     Datasheet   : K64P144M120SF5RM, Rev.2, January 2014
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-14, 10:29, # CodeGen: 0
+**     Date/Time   : 2019-03-15, 17:36, # CodeGen: 1
 **     Abstract    :
 **
 **     Settings    :
@@ -106,6 +106,10 @@ void Common_Init(void)
 #if CPU_COMPONENTS_INIT
 void Components_Init(void)
 {
+  /* ### TimeDate_LDD "TimeDateLdd1" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
+  (void)TimeDateLdd1_Init(NULL);
+  MCUC1_Init(); /* ### McuLibConfig "MCUC1" init code ... */
+  UTIL_H1_Init(); /* ### Utility "UTIL_H1" init code ... */
 }
 #endif /* CPU_COMPONENTS_INIT */
 
