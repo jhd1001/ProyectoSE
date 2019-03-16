@@ -6,7 +6,7 @@
 **     Version     : Component 01.046, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-15, 18:26, # CodeGen: 2
+**     Date/Time   : 2019-03-16, 14:01, # CodeGen: 19
 **
 **     Copyright : 1997 - 2015 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
@@ -55,17 +55,23 @@
 #include "PE_Types.h"
 #include "PE_Error.h"
 #include "PE_Const.h"
-#include "Pins1.h"
 #include "TmDt_H1.h"
 #include "TimeDateLdd1.h"
-#include "TU1.h"
+#include "TU_H1.h"
 #include "UTIL_H1.h"
-#include "MCUC1.h"
+#include "MCUC_H1.h"
 #include "AD_H1.h"
 #include "AdcLdd1.h"
 #include "TI_H1.h"
 #include "TimerIntLdd1.h"
-#include "TU2.h"
+#include "TU_H2.h"
+#include "EInt_H1.h"
+#include "ExtIntLdd1.h"
+#include "FC16_H1.h"
+#include "RealTimeLdd1.h"
+#include "TU_H3.h"
+#include "AS_H1.h"
+#include "ASerialLdd1.h"
 
 
 /*

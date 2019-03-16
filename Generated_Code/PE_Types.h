@@ -6,7 +6,7 @@
 **     Component   : PE_Types
 **     Version     : Driver 01.01
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-15, 18:26, # CodeGen: 2
+**     Date/Time   : 2019-03-16, 14:01, # CodeGen: 19
 **     Abstract    :
 **         PE_Types.h - contains definitions of basic types,
 **         register access macros and hardware specific macros
@@ -204,11 +204,15 @@ typedef unsigned long int       uint32;
 ** is used internally as an index to the array of LDD device structures.
 ** ===========================================================================
 */
-#define PE_LDD_COMPONENT_TU1_ID                  0x00U
+#define PE_LDD_COMPONENT_TU_H1_ID                0x00U
 #define PE_LDD_COMPONENT_TimeDateLdd1_ID         0x01U
 #define PE_LDD_COMPONENT_AdcLdd1_ID              0x02U
-#define PE_LDD_COMPONENT_TU2_ID                  0x03U
+#define PE_LDD_COMPONENT_TU_H2_ID                0x03U
 #define PE_LDD_COMPONENT_TimerIntLdd1_ID         0x04U
+#define PE_LDD_COMPONENT_ExtIntLdd1_ID           0x05U
+#define PE_LDD_COMPONENT_TU_H3_ID                0x06U
+#define PE_LDD_COMPONENT_RealTimeLdd1_ID         0x07U
+#define PE_LDD_COMPONENT_ASerialLdd1_ID          0x08U
 
 /*
 ** ===================================================================

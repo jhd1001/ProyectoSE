@@ -6,7 +6,7 @@
 **     Version     : Component 01.046, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-15, 19:23, # CodeGen: 4
+**     Date/Time   : 2019-03-16, 17:10, # CodeGen: 25
 **
 **     Copyright : 1997 - 2015 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
@@ -634,10 +634,6 @@ typedef struct {
    disabled and 1 = feature enabled. If constant has no defined value it 
    means feature is not used.   
 */
-
-/* Non-maskable interrupt pin initialization 
-   Property: Common settings\NMI pin */
-#define CPU_NMI_PIN                                        0x01U     /* NMI pin initialized */ 
 
 /* JTAG TDI pin initialization 
    Property: Common settings\Debug interface (JTAG)\TDI pin */

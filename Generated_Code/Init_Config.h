@@ -8,7 +8,7 @@
 **     Repository  : Kinetis
 **     Datasheet   : K64P144M120SF5RM, Rev.2, January 2014
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-14, 10:29, # CodeGen: 0
+**     Date/Time   : 2019-03-15, 20:33, # CodeGen: 5
 **     Abstract    :
 **         This file collects Processor Expert components configuration 
 **         and interface files.
@@ -102,8 +102,7 @@
 **            Initialization priority                      : minimal priority
 **            Watchdog disable                             : yes
 **            Utilize after reset values                   : default
-**            NMI pin                                      : Enabled
-**              NMI Pin                                    : PTA4/LLWU_P3/FTM0_CH1/NMI_b/EZP_CS_b
+**            NMI pin                                      : Disabled
 **            Reset pin                                    : Enabled
 **              Reset Pin                                  : RESET_b
 **            Debug interface (JTAG)                       : 
@@ -273,9 +272,6 @@
 /* Processor configuration file */
 #include "CPU_Config.h"
 
-/* PinSettings component header file */
-#include "Pins1.h"
-  
   
 #endif /* __Init_Config_H */
 

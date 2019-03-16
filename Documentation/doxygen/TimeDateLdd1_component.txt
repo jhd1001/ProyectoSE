@@ -967,7 +967,7 @@ registers of the peripheral(s) configured by the component.
 **            Clock configuration 6                        : This component disabled
 **            Clock configuration 7                        : This component disabled
 **          Referenced components                          : 
-**            Linked TimerUnit                             : TU1
+**            Linked TimerUnit                             : TU_H1
 <h1>
 \endcode
 */

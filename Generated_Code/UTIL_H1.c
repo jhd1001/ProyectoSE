@@ -7,12 +7,12 @@
 **     Version     : Component 01.158, Driver 01.00, CPU db: 3.00.000
 **     Repository  : My Components
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-15, 17:36, # CodeGen: 1
+**     Date/Time   : 2019-03-15, 20:29, # CodeGen: 4
 **     Abstract    :
 **          Contains various utility functions.
 **     Settings    :
 **          Component name                                 : UTIL_H1
-**          SDK                                            : MCUC1
+**          SDK                                            : MCUC_H1
 **     Contents    :
 **         strcpy                  - void UTIL_H1_strcpy(uint8_t *dst, size_t dstSize, const unsigned char *src);
 **         strcat                  - void UTIL_H1_strcat(uint8_t *dst, size_t dstSize, const unsigned char *src);

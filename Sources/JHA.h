@@ -11,5 +11,6 @@
  void JHA_Run(void);
  char * getHora(void);
  double getFactor(void);
+ void JHA_SetHora(void);
 
 #endif /* JHA_H_ */

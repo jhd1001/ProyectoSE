@@ -33,17 +33,23 @@
 #include "PE_Error.h"
 #include "PE_Const.h"
 #include "IO_Map.h"
-#include "Pins1.h"
 #include "TmDt_H1.h"
 #include "TimeDateLdd1.h"
-#include "TU1.h"
+#include "TU_H1.h"
 #include "UTIL_H1.h"
-#include "MCUC1.h"
+#include "MCUC_H1.h"
 #include "AD_H1.h"
 #include "AdcLdd1.h"
 #include "TI_H1.h"
 #include "TimerIntLdd1.h"
-#include "TU2.h"
+#include "TU_H2.h"
+#include "EInt_H1.h"
+#include "ExtIntLdd1.h"
+#include "FC16_H1.h"
+#include "RealTimeLdd1.h"
+#include "TU_H3.h"
+#include "AS_H1.h"
+#include "ASerialLdd1.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -112,6 +118,96 @@ void AD_H1_OnCalibrationEnd(void);
 **     Returns     : Nothing
 ** ===================================================================
 */
+
+void EInt_H1_OnInterrupt(void);
+/*
+** ===================================================================
+**     Event       :  EInt_H1_OnInterrupt (module Events)
+**
+**     Component   :  EInt_H1 [ExtInt]
+**     Description :
+**         This event is called when an active signal edge/level has
+**         occurred.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+/*
+** ===================================================================
+**     Event       :  AS_H1_OnError (module Events)
+**
+**     Component   :  AS_H1 [AsynchroSerial]
+**     Description :
+**         This event is called when a channel error (not the error
+**         returned by a given method) occurs. The errors can be read
+**         using <GetError> method.
+**         The event is available only when the <Interrupt
+**         service/event> property is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void AS_H1_OnError(void);
+
+/*
+** ===================================================================
+**     Event       :  AS_H1_OnRxChar (module Events)
+**
+**     Component   :  AS_H1 [AsynchroSerial]
+**     Description :
+**         This event is called after a correct character is received.
+**         The event is available only when the <Interrupt
+**         service/event> property is enabled and either the <Receiver>
+**         property is enabled or the <SCI output mode> property (if
+**         supported) is set to Single-wire mode.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void AS_H1_OnRxChar(void);
+
+/*
+** ===================================================================
+**     Event       :  AS_H1_OnTxChar (module Events)
+**
+**     Component   :  AS_H1 [AsynchroSerial]
+**     Description :
+**         This event is called after a character is transmitted.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void AS_H1_OnTxChar(void);
+
+/*
+** ===================================================================
+**     Event       :  AS_H1_OnFreeTxBuf (module Events)
+**
+**     Component   :  AS_H1 [AsynchroSerial]
+**     Description :
+**         This event is called after the last character in output
+**         buffer is transmitted.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void AS_H1_OnFreeTxBuf(void);
+
+/*
+** ===================================================================
+**     Event       :  AS_H1_OnFullRxBuf (module Events)
+**
+**     Component   :  AS_H1 [AsynchroSerial]
+**     Description :
+**         This event is called when the input buffer is full;
+**         i.e. after reception of the last character 
+**         that was successfully placed into input buffer.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void AS_H1_OnFullRxBuf(void);
 
 /* END Events */
 

@@ -6,7 +6,7 @@
 **     Component   : Utility
 **     Version     : Component 01.158, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-15, 17:36, # CodeGen: 1
+**     Date/Time   : 2019-03-15, 20:29, # CodeGen: 4
 **     Abstract    :
 **          Contains various utility functions.
 **     Settings    :
@@ -128,7 +128,7 @@
 #define __UTIL_H1_H
 
 /* MODULE UTIL_H1. */
-#include "MCUC1.h" /* SDK and API used */
+#include "MCUC_H1.h" /* SDK and API used */
 #include "UTIL_H1config.h" /* configuration */
 
 /* other includes needed */

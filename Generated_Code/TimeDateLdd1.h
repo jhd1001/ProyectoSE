@@ -7,7 +7,7 @@
 **     Version     : Component 01.007, Driver 01.01, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-15, 17:36, # CodeGen: 1
+**     Date/Time   : 2019-03-15, 20:29, # CodeGen: 4
 **     Abstract    :
 **          This component "TimeDate_LDD" implements real time and date.
 **          The component requires a periodic interrupt generator: timer
@@ -46,7 +46,7 @@
 **            Clock configuration 6                        : This component disabled
 **            Clock configuration 7                        : This component disabled
 **          Referenced components                          : 
-**            Linked TimerUnit                             : TU1
+**            Linked TimerUnit                             : TU_H1
 **     Contents    :
 **         Init    - LDD_TDeviceData* TimeDateLdd1_Init(LDD_TUserData *UserDataPtr);
 **         SetTime - LDD_TError TimeDateLdd1_SetTime(LDD_TDeviceData *DeviceDataPtr,...
@@ -114,7 +114,7 @@
 #include "PE_Const.h"
 #include "IO_Map.h"
 /* Include inherited beans */
-#include "TU1.h"
+#include "TU_H1.h"
 
 #include "Cpu.h"
 
@@ -213,15 +213,15 @@ LDD_TError TimeDateLdd1_GetTime(LDD_TDeviceData *DeviceDataPtr, LDD_TimeDate_TTi
 
 /*
 ** ===================================================================
-**     Method      :  TimeDateLdd1_TU1_OnCounterRestart (component TimeDate_LDD)
+**     Method      :  TimeDateLdd1_TU_H1_OnCounterRestart (component TimeDate_LDD)
 **
 **     Description :
-**         The method services the event of the linked component TU1 and 
-**         eventually invokes event OnAlarm and OnSecond.
+**         The method services the event of the linked component TU_H1 
+**         and eventually invokes event OnAlarm and OnSecond.
 **         This method is internal. It is used by Processor Expert only.
 ** ===================================================================
 */
-void TU1_OnCounterRestart(LDD_TUserData *UserDataPtr);
+void TU_H1_OnCounterRestart(LDD_TUserData *UserDataPtr);
 
 /* END TimeDateLdd1. */
 

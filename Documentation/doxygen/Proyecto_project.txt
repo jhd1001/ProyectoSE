@@ -26,11 +26,15 @@
 <br/>
 
 \page page_components Components 
-- \subpage TU1
+- \subpage TU_H1
 - \subpage TimeDateLdd1
 - \subpage AdcLdd1
-- \subpage TU2
+- \subpage TU_H2
 - \subpage TimerIntLdd1
+- \subpage ExtIntLdd1
+- \subpage TU_H3
+- \subpage RealTimeLdd1
+- \subpage ASerialLdd1
 
 */
 
@@ -63,11 +67,15 @@
 <br/>
 
 \page page_components Components 
-- \subpage TU1
+- \subpage TU_H1
 - \subpage TimeDateLdd1
 - \subpage AdcLdd1
-- \subpage TU2
+- \subpage TU_H2
 - \subpage TimerIntLdd1
+- \subpage ExtIntLdd1
+- \subpage TU_H3
+- \subpage RealTimeLdd1
+- \subpage ASerialLdd1
 
 */
 

@@ -37,7 +37,7 @@ extern "C" {
 
 
 /* User includes (#include below this line is not maintained by Processor Expert) */
-#include "JHA.h"
+//#include "JHA.h"
 
 /*
 ** ===================================================================
@@ -67,6 +67,12 @@ void AD_H1_OnEnd(void) {
 	JHA_Factoriza();
 }
 
+// se produce una interrupción en el pulsador D12
+// se pulsa o se suelta
+void EInt_H1_OnInterrupt(void) {
+	JHA_SetHora();
+}
+
 /*
 ** ===================================================================
 **     Event       :  AD_H1_OnCalibrationEnd (module Events)
@@ -84,6 +90,84 @@ void AD_H1_OnEnd(void) {
 void AD_H1_OnCalibrationEnd(void)
 {
   /* Write your code here ... */
+}
+
+/*
+** ===================================================================
+**     Event       :  AS_H1_OnError (module Events)
+**
+**     Component   :  AS_H1 [AsynchroSerial]
+**     Description :
+**         This event is called when a channel error (not the error
+**         returned by a given method) occurs. The errors can be read
+**         using <GetError> method.
+**         The event is available only when the <Interrupt
+**         service/event> property is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void AS_H1_OnError(void)
+{
+  /* Write your code here ... */
+}
+
+/*
+** ===================================================================
+**     Event       :  AS_H1_OnRxChar (module Events)
+**
+**     Component   :  AS_H1 [AsynchroSerial]
+**     Description :
+**         This event is called after a correct character is received.
+**         The event is available only when the <Interrupt
+**         service/event> property is enabled and either the <Receiver>
+**         property is enabled or the <SCI output mode> property (if
+**         supported) is set to Single-wire mode.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void AS_H1_OnRxChar(void)
+{
+  /* Write your code here ... */
+}
+
+/*
+** ===================================================================
+**     Event       :  AS_H1_OnTxChar (module Events)
+**
+**     Component   :  AS_H1 [AsynchroSerial]
+**     Description :
+**         This event is called after a character is transmitted.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void AS_H1_OnTxChar(void)
+{
+  /* Write your code here ... */
+}
+
+/*
+** ===================================================================
+**     Event       :  AS_H1_OnFreeTxBuf (module Events)
+**
+**     Component   :  AS_H1 [AsynchroSerial]
+**     Description :
+**         This event is called after the last character in output
+**         buffer is transmitted.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void AS_H1_OnFreeTxBuf(void)
+{
+	printf("ultimo caracter transmitido\r\n");
+  /* Write your code here ... */
+}
+
+void AS_H1_OnFullRxBuf(void) {
+	JHA_OnFullRxBuf();
 }
 
 /* END Events */

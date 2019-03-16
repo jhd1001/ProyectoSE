@@ -7,7 +7,7 @@
 **     Version     : Component 01.007, Driver 01.01, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-15, 17:36, # CodeGen: 1
+**     Date/Time   : 2019-03-15, 20:29, # CodeGen: 4
 **     Abstract    :
 **          This component "TimeDate_LDD" implements real time and date.
 **          The component requires a periodic interrupt generator: timer
@@ -46,7 +46,7 @@
 **            Clock configuration 6                        : This component disabled
 **            Clock configuration 7                        : This component disabled
 **          Referenced components                          : 
-**            Linked TimerUnit                             : TU1
+**            Linked TimerUnit                             : TU_H1
 **     Contents    :
 **         Init    - LDD_TDeviceData* TimeDateLdd1_Init(LDD_TUserData *UserDataPtr);
 **         SetTime - LDD_TError TimeDateLdd1_SetTime(LDD_TDeviceData *DeviceDataPtr,...
@@ -173,7 +173,7 @@ LDD_TDeviceData* TimeDateLdd1_Init(LDD_TUserData *UserDataPtr)
   DeviceDataPrv->EnUser = TRUE;        /* Set the flag "device enabled" */
   /* Registration of the device structure */
   PE_LDD_RegisterDeviceStructure(PE_LDD_COMPONENT_TimeDateLdd1_ID,DeviceDataPrv);
-  DeviceDataPrv->LinkedDeviceDataPtr = TU1_Init((LDD_TUserData *)NULL);
+  DeviceDataPrv->LinkedDeviceDataPtr = TU_H1_Init((LDD_TUserData *)NULL);
   if (DeviceDataPrv->LinkedDeviceDataPtr == NULL) { /* Is initialization of TimerUnit unsuccessful? */
     /* Unregistration of the device structure */
     PE_LDD_UnregisterDeviceStructure(PE_LDD_COMPONENT_TimeDateLdd1_ID);
@@ -217,12 +217,12 @@ LDD_TError TimeDateLdd1_SetTime(LDD_TDeviceData *DeviceDataPtr, LDD_TimeDate_TTi
     return ERR_RANGE;                  /* If not correct then error */
   }
   if (DeviceDataPrv->EnUser) {         /* Is the component enabled now? */
-    (void)TU1_Disable(DeviceDataPrv->LinkedDeviceDataPtr); /* Disable TimerUnit component */
+    (void)TU_H1_Disable(DeviceDataPrv->LinkedDeviceDataPtr); /* Disable TimerUnit component */
   }
   DeviceDataPrv->TotalHthH = (360000UL * (uint32_t)TimePtr->Hour) + (6000U * (uint32_t)TimePtr->Min) + (100U * (uint32_t)TimePtr->Sec) + (uint32_t)TimePtr->Sec100; /* Load given time re-calculated to 10ms ticks into software tick counter */
   DeviceDataPrv->TotalHthL = 0U;
   if (DeviceDataPrv->EnUser) {         /* Is the component enabled? */
-    (void)TU1_Enable(DeviceDataPrv->LinkedDeviceDataPtr); /* Enable TimerUnit */
+    (void)TU_H1_Enable(DeviceDataPrv->LinkedDeviceDataPtr); /* Enable TimerUnit */
   }
   return ERR_OK;                       /* OK */
 }
@@ -269,15 +269,15 @@ LDD_TError TimeDateLdd1_GetTime(LDD_TDeviceData *DeviceDataPtr, LDD_TimeDate_TTi
 
 /*
 ** ===================================================================
-**     Method      :  TimeDateLdd1_TU1_OnCounterRestart (component TimeDate_LDD)
+**     Method      :  TimeDateLdd1_TU_H1_OnCounterRestart (component TimeDate_LDD)
 **
 **     Description :
-**         The method services the event of the linked component TU1 and 
-**         eventually invokes event OnAlarm and OnSecond.
+**         The method services the event of the linked component TU_H1 
+**         and eventually invokes event OnAlarm and OnSecond.
 **         This method is internal. It is used by Processor Expert only.
 ** ===================================================================
 */
-void TU1_OnCounterRestart(LDD_TUserData *UserDataPtr)
+void TU_H1_OnCounterRestart(LDD_TUserData *UserDataPtr)
 {
   TimeDateLdd1_TDeviceData *DeviceDataPrv = PE_LDD_DeviceDataList[PE_LDD_COMPONENT_TimeDateLdd1_ID];
   register uint32_t Val32;             /* Temporary variable */
