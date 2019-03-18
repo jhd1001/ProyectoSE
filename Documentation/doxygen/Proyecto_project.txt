@@ -35,6 +35,9 @@
 - \subpage TU_H3
 - \subpage RealTimeLdd1
 - \subpage ASerialLdd1
+- \subpage SM_E1
+- \subpage SS1
+- \subpage CD1
 
 */
 
@@ -76,6 +79,9 @@
 - \subpage TU_H3
 - \subpage RealTimeLdd1
 - \subpage ASerialLdd1
+- \subpage SM_E1
+- \subpage SS1
+- \subpage CD1
 
 */
 

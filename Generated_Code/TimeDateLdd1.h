@@ -7,7 +7,7 @@
 **     Version     : Component 01.007, Driver 01.01, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-15, 20:29, # CodeGen: 4
+**     Date/Time   : 2019-03-18, 06:53, # CodeGen: 26
 **     Abstract    :
 **          This component "TimeDate_LDD" implements real time and date.
 **          The component requires a periodic interrupt generator: timer
@@ -51,6 +51,8 @@
 **         Init    - LDD_TDeviceData* TimeDateLdd1_Init(LDD_TUserData *UserDataPtr);
 **         SetTime - LDD_TError TimeDateLdd1_SetTime(LDD_TDeviceData *DeviceDataPtr,...
 **         GetTime - LDD_TError TimeDateLdd1_GetTime(LDD_TDeviceData *DeviceDataPtr,...
+**         SetDate - LDD_TError TimeDateLdd1_SetDate(LDD_TDeviceData *DeviceDataPtr,...
+**         GetDate - LDD_TError TimeDateLdd1_GetDate(LDD_TDeviceData *DeviceDataPtr,...
 **
 **     Copyright : 1997 - 2015 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
@@ -133,6 +135,8 @@ extern "C" {
 #define TimeDateLdd1_Init_METHOD_ENABLED /*!< Init method of the component TimeDateLdd1 is enabled (generated) */
 #define TimeDateLdd1_SetTime_METHOD_ENABLED /*!< SetTime method of the component TimeDateLdd1 is enabled (generated) */
 #define TimeDateLdd1_GetTime_METHOD_ENABLED /*!< GetTime method of the component TimeDateLdd1 is enabled (generated) */
+#define TimeDateLdd1_SetDate_METHOD_ENABLED /*!< SetDate method of the component TimeDateLdd1 is enabled (generated) */
+#define TimeDateLdd1_GetDate_METHOD_ENABLED /*!< GetDate method of the component TimeDateLdd1 is enabled (generated) */
 
 /* Events configuration constants - generated for all enabled component's events */
 
@@ -210,6 +214,58 @@ LDD_TError TimeDateLdd1_SetTime(LDD_TDeviceData *DeviceDataPtr, LDD_TimeDate_TTi
 */
 /* ===================================================================*/
 LDD_TError TimeDateLdd1_GetTime(LDD_TDeviceData *DeviceDataPtr, LDD_TimeDate_TTimeRec *TimePtr);
+
+/*
+** ===================================================================
+**     Method      :  TimeDateLdd1_SetDate (component TimeDate_LDD)
+*/
+/*!
+**     @brief
+**         Sets new date.
+**         Note: Member DayOfWeek in LDD_TimeDate_TDateRec structure
+**         need not be correctly filled in. If this item contains
+**         incorrect value (outside the range 0 to 6), then the correct
+**         value is calculated from other parameters. Other members of
+**         the structure LDD_TimeDate_TDateRec should be properly
+**         filled out.
+**     @param
+**         DeviceDataPtr   - Pointer to device data
+**                           structure pointer returned by [Init] method.
+**     @param
+**         DatePtr         - Pointer to the date structure with
+**                           new date to set.
+**     @return
+**                         - Error code, possible codes:
+**                           ERR_OK - OK
+**                           ERR_SPEED - The component does not work in
+**                           the active clock configuration
+**                           ERR_RANGE - Parameter out of range (not
+**                           used for DayOfWeek)
+*/
+/* ===================================================================*/
+LDD_TError TimeDateLdd1_SetDate(LDD_TDeviceData *DeviceDataPtr, LDD_TimeDate_TDateRec *DatePtr);
+
+/*
+** ===================================================================
+**     Method      :  TimeDateLdd1_GetDate (component TimeDate_LDD)
+*/
+/*!
+**     @brief
+**         Returns actual date. 
+**     @param
+**         DeviceDataPtr   - Pointer to device data
+**                           structure pointer returned by [Init] method.
+**     @param
+**         DatePtr         - Pointer to the time structure to
+**                           fill with current time.
+**     @return
+**                         - Error code, possible codes:
+**                           ERR_OK - OK
+**                           ERR_SPEED - The component does not work in
+**                           the active clock configuration
+*/
+/* ===================================================================*/
+LDD_TError TimeDateLdd1_GetDate(LDD_TDeviceData *DeviceDataPtr, LDD_TimeDate_TDateRec *DatePtr);
 
 /*
 ** ===================================================================

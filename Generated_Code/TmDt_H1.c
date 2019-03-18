@@ -7,7 +7,7 @@
 **     Version     : Component 02.111, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-15, 17:36, # CodeGen: 1
+**     Date/Time   : 2019-03-18, 06:53, # CodeGen: 26
 **     Abstract    :
 **         This component "TimeDate" implements real time and date.
 **         The component requires a periodic interrupt generator: timer
@@ -37,6 +37,8 @@
 **     Contents    :
 **         SetTime - byte TmDt_H1_SetTime(byte Hour, byte Min, byte Sec, byte Sec100);
 **         GetTime - byte TmDt_H1_GetTime(TIMEREC *Time);
+**         SetDate - byte TmDt_H1_SetDate(word Year, byte Month, byte Day);
+**         GetDate - byte TmDt_H1_GetDate(DATEREC *Date);
 **
 **     Copyright : 1997 - 2015 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
@@ -150,6 +152,68 @@ byte TmDt_H1_GetTime(TIMEREC *Time)
   Time->Sec = (byte)InhrTime.Sec;
   Time->Sec100 = (byte)InhrTime.Sec100;
   return ERR_OK;
+}
+
+/*
+** ===================================================================
+**     Method      :  TmDt_H1_SetDate (component TimeDate)
+**     Description :
+**         This method sets a new actual date. See limitations at the
+**         page <General Info>.
+**     Parameters  :
+**         NAME            - DESCRIPTION
+**         Year            - Years (16-bit unsigned integer)
+**         Month           - Months (8-bit unsigned integer)
+**         Day             - Days (8-bit unsigned integer)
+**     Returns     :
+**         ---             - Error code, possible codes:
+**                           ERR_OK - OK
+**                           ERR_SPEED - This device does not work in
+**                           the active speed mode
+**                           ERR_RANGE - Parameter out of range
+** ===================================================================
+*/
+byte TmDt_H1_SetDate(word Year,byte Month,byte Day)
+{
+  LDD_TimeDate_TDateRec InhrDate;
+
+  InhrDate.Year = (uint16_t)Year;
+  InhrDate.Month = (uint16_t)Month;
+  InhrDate.Day = (uint16_t)Day;
+  InhrDate.DayOfWeek = (uint16_t)UINT_MAX; /* Correct day of week will be calculated */
+  return TimeDateLdd1_SetDate(TimeDateLdd1_DeviceData, &InhrDate);
+}
+
+/*
+** ===================================================================
+**     Method      :  TmDt_H1_GetDate (component TimeDate)
+**     Description :
+**         This method returns current date.
+**     Parameters  :
+**         NAME            - DESCRIPTION
+**       * Date            - Pointer to the structure DATEREC. It
+**                           contains actual year, month, and day
+**                           description.
+**     Returns     :
+**         ---             - Error code, possible codes:
+**                           ERR_OK - OK
+**                           ERR_SPEED - This device does not work in
+**                           the active speed mode
+** ===================================================================
+*/
+byte TmDt_H1_GetDate(DATEREC *Date)
+{
+  LDD_TimeDate_TDateRec InhrDate;
+  LDD_TError Error;
+
+  Error = TimeDateLdd1_GetDate(TimeDateLdd1_DeviceData, &InhrDate);
+  if (Error != ERR_OK) {
+    return (byte)Error;
+  }
+  Date->Year = (word)InhrDate.Year;
+  Date->Month = (byte)InhrDate.Month;
+  Date->Day = (byte)InhrDate.Day;
+  return ERR_OK;                       /* OK */
 }
 
 /* END TmDt_H1. */

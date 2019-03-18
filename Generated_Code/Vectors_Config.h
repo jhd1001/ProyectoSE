@@ -66,6 +66,14 @@
 #include "TU_H3.h"
 #include "AS_H1.h"
 #include "ASerialLdd1.h"
+#include "FAT_E1.h"
+#include "SD_E1.h"
+#include "SS1.h"
+#include "CD1.h"
+#include "WAIT_E1.h"
+#include "TMOUT_E1.h"
+#include "CS_E1.h"
+#include "SM_E1.h"
 #include "Events.h"
 
 #ifdef __cplusplus
@@ -118,7 +126,7 @@ extern "C" {
 #define VECTOR_40         (tIsrFunc)&UnhandledInterrupt         /* 0x28 -    ivINT_I2C0                     unused by PE */
 #define VECTOR_41         (tIsrFunc)&UnhandledInterrupt         /* 0x29 -    ivINT_I2C1                     unused by PE */
 #define VECTOR_42         (tIsrFunc)&UnhandledInterrupt         /* 0x2A -    ivINT_SPI0                     unused by PE */
-#define VECTOR_43         (tIsrFunc)&UnhandledInterrupt         /* 0x2B -    ivINT_SPI1                     unused by PE */
+#define VECTOR_43         (tIsrFunc)&SM_E1_Interrupt            /* 0x2B 112  ivINT_SPI1                     used by PE */
 #define VECTOR_44         (tIsrFunc)&UnhandledInterrupt         /* 0x2C -    ivINT_I2S0_Tx                  unused by PE */
 #define VECTOR_45         (tIsrFunc)&UnhandledInterrupt         /* 0x2D -    ivINT_I2S0_Rx                  unused by PE */
 #define VECTOR_46         (tIsrFunc)&UnhandledInterrupt         /* 0x2E -    ivINT_UART0_LON                unused by PE */

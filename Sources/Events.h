@@ -50,6 +50,14 @@
 #include "TU_H3.h"
 #include "AS_H1.h"
 #include "ASerialLdd1.h"
+#include "FAT_E1.h"
+#include "SD_E1.h"
+#include "SS1.h"
+#include "CD1.h"
+#include "WAIT_E1.h"
+#include "TMOUT_E1.h"
+#include "CS_E1.h"
+#include "SM_E1.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -208,6 +216,25 @@ void AS_H1_OnFreeTxBuf(void);
 ** ===================================================================
 */
 void AS_H1_OnFullRxBuf(void);
+
+/*
+** ===================================================================
+**     Event       :  SM_E1_OnBlockSent (module Events)
+**
+**     Component   :  SM_E1 [SPIMaster_LDD]
+*/
+/*!
+**     @brief
+**         This event is called after the last character from the
+**         output buffer is moved to the transmitter. This event is
+**         available only if the SendBlock method is enabled.
+**     @param
+**         UserDataPtr     - Pointer to the user or
+**                           RTOS specific data. The pointer is passed
+**                           as the parameter of Init method. 
+*/
+/* ===================================================================*/
+void SM_E1_OnBlockSent(LDD_TUserData *UserDataPtr);
 
 /* END Events */
 

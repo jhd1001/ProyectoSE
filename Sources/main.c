@@ -47,6 +47,14 @@
 #include "TU_H3.h"
 #include "AS_H1.h"
 #include "ASerialLdd1.h"
+#include "FAT_E1.h"
+#include "SD_E1.h"
+#include "SS1.h"
+#include "CD1.h"
+#include "WAIT_E1.h"
+#include "TMOUT_E1.h"
+#include "CS_E1.h"
+#include "SM_E1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -58,17 +66,24 @@
 #include "stdio.h"
 #include "JHA.h"
 
+static FAT_E1_FATFS fileSystemObject;
+static FIL fp;
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
 int main(void)
 /*lint -restore Enable MISRA rule (6.3) checking. */
 {
   /* Write your local variable definition here */
+  /* SD card detection: PTE6 with pull-down! */
+  PORT_PDD_SetPinPullSelect(PORTE_BASE_PTR, 6, PORT_PDD_PULL_DOWN);
+  PORT_PDD_SetPinPullEnable(PORTE_BASE_PTR, 6, PORT_PDD_PULL_ENABLE);
 
   /*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
   PE_low_level_init();
   /*** End of Processor Expert internal initialization.                    ***/
 
-  /* Write your code here */
+  if (FAT_E1_Init()!=ERR_OK) return -1; /* initialize FAT driver */
+  if (FAT_E1_mount(&fileSystemObject, (const TCHAR*)"0", 1) != FR_OK) return -1; /* mount file system */
+
   /* For example: for(;;) { } */
   JHA_Run();
 

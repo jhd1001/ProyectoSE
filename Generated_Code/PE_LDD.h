@@ -6,7 +6,7 @@
 **     Version     : Component 01.046, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-16, 14:01, # CodeGen: 19
+**     Date/Time   : 2019-03-18, 06:53, # CodeGen: 26
 **
 **     Copyright : 1997 - 2015 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
@@ -72,6 +72,14 @@
 #include "TU_H3.h"
 #include "AS_H1.h"
 #include "ASerialLdd1.h"
+#include "FAT_E1.h"
+#include "SD_E1.h"
+#include "SS1.h"
+#include "CD1.h"
+#include "WAIT_E1.h"
+#include "TMOUT_E1.h"
+#include "CS_E1.h"
+#include "SM_E1.h"
 
 
 /*

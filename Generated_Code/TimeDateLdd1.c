@@ -7,7 +7,7 @@
 **     Version     : Component 01.007, Driver 01.01, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-15, 20:29, # CodeGen: 4
+**     Date/Time   : 2019-03-18, 06:53, # CodeGen: 26
 **     Abstract    :
 **          This component "TimeDate_LDD" implements real time and date.
 **          The component requires a periodic interrupt generator: timer
@@ -51,6 +51,8 @@
 **         Init    - LDD_TDeviceData* TimeDateLdd1_Init(LDD_TUserData *UserDataPtr);
 **         SetTime - LDD_TError TimeDateLdd1_SetTime(LDD_TDeviceData *DeviceDataPtr,...
 **         GetTime - LDD_TError TimeDateLdd1_GetTime(LDD_TDeviceData *DeviceDataPtr,...
+**         SetDate - LDD_TError TimeDateLdd1_SetDate(LDD_TDeviceData *DeviceDataPtr,...
+**         GetDate - LDD_TError TimeDateLdd1_GetDate(LDD_TDeviceData *DeviceDataPtr,...
 **
 **     Copyright : 1997 - 2015 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
@@ -115,6 +117,8 @@ extern "C" {
 /* Table of month length (in days) */
 static const uint16_t NLY[12] = {31U,28U,31U,30U,31U,30U,31U,31U,30U,31U,30U,31U}; /* Non-leap-year */
 static const uint16_t  LY[12] = {31U,29U,31U,30U,31U,30U,31U,31U,30U,31U,30U,31U}; /* Leap-year */
+/* Number of days from begin of the year */
+static const uint16_t MONTH_DAYS[13] = {0U,31U,59U,90U,120U,151U,181U,212U,243U,273U,304U,334U}; /* Non-leap-year */
 
 typedef struct {
   LDD_TDeviceData *LinkedDeviceDataPtr;
@@ -265,6 +269,115 @@ LDD_TError TimeDateLdd1_GetTime(LDD_TDeviceData *DeviceDataPtr, LDD_TimeDate_TTi
   TimePtr->Min = (uint16_t)(Var2 % 60U); /* Modulo 60 gives appropriate number of minutes */
   TimePtr->Hour = (uint16_t)(Var2 / 60U); /* Quotient gives total number of hours then */
   return ERR_OK;
+}
+
+/*
+** ===================================================================
+**     Method      :  TimeDateLdd1_SetDate (component TimeDate_LDD)
+*/
+/*!
+**     @brief
+**         Sets new date.
+**         Note: Member DayOfWeek in LDD_TimeDate_TDateRec structure
+**         need not be correctly filled in. If this item contains
+**         incorrect value (outside the range 0 to 6), then the correct
+**         value is calculated from other parameters. Other members of
+**         the structure LDD_TimeDate_TDateRec should be properly
+**         filled out.
+**     @param
+**         DeviceDataPtr   - Pointer to device data
+**                           structure pointer returned by [Init] method.
+**     @param
+**         DatePtr         - Pointer to the date structure with
+**                           new date to set.
+**     @return
+**                         - Error code, possible codes:
+**                           ERR_OK - OK
+**                           ERR_SPEED - The component does not work in
+**                           the active clock configuration
+**                           ERR_RANGE - Parameter out of range (not
+**                           used for DayOfWeek)
+*/
+/* ===================================================================*/
+LDD_TError TimeDateLdd1_SetDate(LDD_TDeviceData *DeviceDataPtr, LDD_TimeDate_TDateRec *DatePtr)
+{
+  TimeDateLdd1_TDeviceData *DeviceDataPrv = (TimeDateLdd1_TDeviceData *)DeviceDataPtr;
+  uint16_t VarD;                       /* Number of days from 1.1.1998 */
+  uint16_t VarW;                       /* Sun - Sat counter */
+  const uint16_t *ptr;                 /* Pointer to NLY/LY table */
+
+  /* Parameter test - this test can be disabled by setting the "Ignore range checking"
+     property to the "yes" value in the "Configuration inspector" */
+  if ((DatePtr->Year < 1998U) || (DatePtr->Year > 2099U) || (DatePtr->Month > 12U) || (DatePtr->Month == 0U) || (DatePtr->Day > 31U) || (DatePtr->Day == 0U)) { /* Test correctness of given parameters */
+    return ERR_RANGE;                  /* If not correct then error */
+  }
+  if (DatePtr->Year & 0x03U) {         /* Is given year non-leap-one? */
+    ptr = NLY;                         /* Set pointer to non-leap-year day table */
+  }
+  else {                               /* Is given year leap-one? */
+    ptr = LY;                          /* Set pointer to leap-year day table */
+  }
+  if (ptr[DatePtr->Month - 1U] < DatePtr->Day) { /* Does the obtained number of days exceed number of days in the appropriate month & year? */
+    return ERR_RANGE;                  /* If yes (incorrect date inserted) then error */
+  }
+  if (DatePtr->DayOfWeek > 6U) {       /* If the parameter DayOfWeek is incorrect, calculate it. */
+    VarD = (uint16_t)(((DatePtr->Year - 1997U) * 365U) + ((DatePtr->Year - 1997U) / 4U)); /* Number of days from 1997 till given year */
+    if ((!(DatePtr->Year & 0x03U)) && (DatePtr->Month > 2U)) { /* Add days from begin of given year till given month */
+      VarD += (MONTH_DAYS[DatePtr->Month-1U] + 1U);
+    }
+    else {
+      VarD += MONTH_DAYS[DatePtr->Month-1U];
+    }
+    VarD = (VarD + DatePtr->Day) - 1U; /* Add days in given month */
+    VarW = (uint16_t)((VarD + 0x03U) % 7U); /* Calculate value of day in a week */
+  }                                                              
+  else {
+    VarW = DatePtr->DayOfWeek;
+  }
+  /* {Default RTOS Adapter} Critical section begin, general PE function is used */
+  EnterCritical();
+  DeviceDataPrv->CntDOW = VarW;        /* Set Sun - Sat counter */
+  DeviceDataPrv->CntDay = DatePtr->Day; /* Set day counter to the given value */
+  DeviceDataPrv->CntMonth = DatePtr->Month; /* Set month counter to the given value */
+  DeviceDataPrv->CntYear = DatePtr->Year; /* Set year counter to the given value */
+  /* {Default RTOS Adapter} Critical section end, general PE function is used */
+  ExitCritical();
+  return ERR_OK;                       /* OK */
+}
+
+/*
+** ===================================================================
+**     Method      :  TimeDateLdd1_GetDate (component TimeDate_LDD)
+*/
+/*!
+**     @brief
+**         Returns actual date. 
+**     @param
+**         DeviceDataPtr   - Pointer to device data
+**                           structure pointer returned by [Init] method.
+**     @param
+**         DatePtr         - Pointer to the time structure to
+**                           fill with current time.
+**     @return
+**                         - Error code, possible codes:
+**                           ERR_OK - OK
+**                           ERR_SPEED - The component does not work in
+**                           the active clock configuration
+*/
+/* ===================================================================*/
+LDD_TError TimeDateLdd1_GetDate(LDD_TDeviceData *DeviceDataPtr, LDD_TimeDate_TDateRec *DatePtr)
+{
+  TimeDateLdd1_TDeviceData *DeviceDataPrv = (TimeDateLdd1_TDeviceData *)DeviceDataPtr;
+
+  /* {Default RTOS Adapter} Critical section begin, general PE function is used */
+  EnterCritical();
+  DatePtr->Year = DeviceDataPrv->CntYear; /* Year */
+  DatePtr->Month = DeviceDataPrv->CntMonth; /* Month */
+  DatePtr->Day = DeviceDataPrv->CntDay; /* Day */
+  DatePtr->DayOfWeek = DeviceDataPrv->CntDOW; /* Day of week */
+  /* {Default RTOS Adapter} Critical section end, general PE function is used */
+  ExitCritical();
+  return ERR_OK;                       /* OK */
 }
 
 /*

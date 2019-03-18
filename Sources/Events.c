@@ -170,6 +170,28 @@ void AS_H1_OnFullRxBuf(void) {
 	JHA_OnFullRxBuf();
 }
 
+/*
+** ===================================================================
+**     Event       :  SM_E1_OnBlockSent (module Events)
+**
+**     Component   :  SM_E1 [SPIMaster_LDD]
+*/
+/*!
+**     @brief
+**         This event is called after the last character from the
+**         output buffer is moved to the transmitter. This event is
+**         available only if the SendBlock method is enabled.
+**     @param
+**         UserDataPtr     - Pointer to the user or
+**                           RTOS specific data. The pointer is passed
+**                           as the parameter of Init method. 
+*/
+/* ===================================================================*/
+void SM_E1_OnBlockSent(LDD_TUserData *UserDataPtr)
+{
+  /* Write your code here ... */
+}
+
 /* END Events */
 
 #ifdef __cplusplus
