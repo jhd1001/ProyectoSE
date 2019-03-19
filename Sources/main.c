@@ -65,9 +65,9 @@
 /* User includes (#include below this line is not maintained by Processor Expert) */
 #include "stdio.h"
 #include "JHA.h"
+#include "AEX.h"
 
 static FAT_E1_FATFS fileSystemObject;
-static FIL fp;
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
 int main(void)
 /*lint -restore Enable MISRA rule (6.3) checking. */
@@ -84,8 +84,11 @@ int main(void)
   if (FAT_E1_Init()!=ERR_OK) return -1; /* initialize FAT driver */
   if (FAT_E1_mount(&fileSystemObject, (const TCHAR*)"0", 1) != FR_OK) return -1; /* mount file system */
 
-  /* For example: for(;;) { } */
-  JHA_Run();
+  for(;;)
+  {
+	  JHA_Run();
+	  LogToSDCardLT(1, 2, 3, 4, 5);
+  }
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
   /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
