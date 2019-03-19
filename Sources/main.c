@@ -73,14 +73,14 @@ int main(void)
 /*lint -restore Enable MISRA rule (6.3) checking. */
 {
   /* Write your local variable definition here */
-  /* SD card detection: PTE6 with pull-down! */
-  PORT_PDD_SetPinPullSelect(PORTE_BASE_PTR, 6, PORT_PDD_PULL_DOWN);
-  PORT_PDD_SetPinPullEnable(PORTE_BASE_PTR, 6, PORT_PDD_PULL_ENABLE);
 
   /*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
   PE_low_level_init();
   /*** End of Processor Expert internal initialization.                    ***/
 
+  /* SD card detection: PTE6 with pull-down! */
+  PORT_PDD_SetPinPullSelect(PORTE_BASE_PTR, 6, PORT_PDD_PULL_DOWN);
+  PORT_PDD_SetPinPullEnable(PORTE_BASE_PTR, 6, PORT_PDD_PULL_ENABLE);
   if (FAT_E1_Init()!=ERR_OK) return -1; /* initialize FAT driver */
   if (FAT_E1_mount(&fileSystemObject, (const TCHAR*)"0", 1) != FR_OK) return -1; /* mount file system */
 
@@ -88,6 +88,7 @@ int main(void)
   {
 	  JHA_Run();
 	  LogToSDCardLT(1, 2, 3, 4, 5);
+	  WAIT_E1_Waitms(1000);
   }
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
