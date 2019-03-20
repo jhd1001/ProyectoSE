@@ -57,6 +57,8 @@
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\AS_H1.c</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\ASerialLdd1.c</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\AdcLdd1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\BitIoLdd1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\Bit_E1.c</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\CD1.c</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\CS_E1.c</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\Cpu.c</PathName>
@@ -82,6 +84,7 @@
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\WAIT_E1.c</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\ff.c</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Project_Settings\Startup_Code\startup.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Sources\AEX.c</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Sources\Events.c</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Sources\JHA.c</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Sources\main.c</PathName>
@@ -94,6 +97,8 @@
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\AS_H1.h</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\ASerialLdd1.h</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\AdcLdd1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\BitIoLdd1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\Bit_E1.h</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\CD1.h</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\CPU_Config.h</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\CS_E1.h</PathName>
@@ -133,6 +138,7 @@
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\ff.h</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\ffconf.h</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\integer.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Sources\AEX.h</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Sources\Events.h</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Sources\JHA.h</PathName>
       <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\IO_Map\MK64F12.h</PathName>

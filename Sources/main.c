@@ -55,6 +55,8 @@
 #include "TMOUT_E1.h"
 #include "CS_E1.h"
 #include "SM_E1.h"
+#include "Bit_E1.h"
+#include "BitIoLdd1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -84,11 +86,12 @@ int main(void)
   if (FAT_E1_Init()!=ERR_OK) return -1; /* initialize FAT driver */
   if (FAT_E1_mount(&fileSystemObject, (const TCHAR*)"0", 1) != FR_OK) return -1; /* mount file system */
 
+  JHA_Run();
+
   for(;;)
   {
-	  JHA_Run();
 	  LogToSDCardLT(1, 2, 3, 4, 5);
-	  WAIT_E1_Waitms(1000);
+	  WAIT_E1_Waitms(3000);
   }
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/

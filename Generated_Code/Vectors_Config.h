@@ -74,6 +74,8 @@
 #include "TMOUT_E1.h"
 #include "CS_E1.h"
 #include "SM_E1.h"
+#include "Bit_E1.h"
+#include "BitIoLdd1.h"
 #include "Events.h"
 
 #ifdef __cplusplus

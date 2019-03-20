@@ -8,7 +8,7 @@
 **     Repository  : Kinetis
 **     Datasheet   : K64P144M120SF5RM, Rev.2, January 2014
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-18, 06:53, # CodeGen: 26
+**     Date/Time   : 2019-03-20, 06:19, # CodeGen: 27
 **     Abstract    :
 **
 **     Settings    :
@@ -132,6 +132,8 @@ void Components_Init(void)
   (void)CD1_Init(NULL);
   /* ### SD_Card "SD_E1" init code ... */
   /* ### FAT_FileSystem "FAT_E1" init code ... */
+  /* ### BitIO_LDD "BitIoLdd1" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
+  (void)BitIoLdd1_Init(NULL);
 }
 #endif /* CPU_COMPONENTS_INIT */
 

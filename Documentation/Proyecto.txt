@@ -305,6 +305,12 @@ Module "SM_E1"     (component SPIMaster_LDD)
                 times. This method is available if number of chip selects or number of attribute set is greater than 1. If the 
                 device doesn't support chip select functionality the ChipSelect parameter is ignored.
 
+Module "Bit_E1"    (component BitIO)
+   - Bit_E1_PutVal -The specified output value is set. If the direction is [input], the component saves the value to a memory 
+                or a register and this value will be written to the pin after switching to the output mode (using 
+                [SetDir(TRUE)]; see <Safe mode> property for limitations). If the direction is [output], it writes the value to 
+                the pin. (Method is available only if the direction = _[output]_ or _[input/output]_).
+
 Module "Cpu"       (component MK64FN1M0LQ12)
 
 ===================================================================================
