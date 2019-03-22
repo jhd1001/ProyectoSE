@@ -38,6 +38,9 @@
 - \subpage SM_E1
 - \subpage SS1
 - \subpage CD1
+- \subpage AdcLdd2
+- \subpage TU1
+- \subpage TimerIntLdd2
 
 */
 
@@ -82,6 +85,9 @@
 - \subpage SM_E1
 - \subpage SS1
 - \subpage CD1
+- \subpage AdcLdd2
+- \subpage TU1
+- \subpage TimerIntLdd2
 
 */
 

@@ -16,7 +16,7 @@
 #endif
 
 #ifndef WAIT_E1_CONFIG_USE_RTOS_WAIT
-  #define WAIT_E1_CONFIG_USE_RTOS_WAIT  (0)
+  #define WAIT_E1_CONFIG_USE_RTOS_WAIT  (0 && MCUC_H1_CONFIG_SDK_USE_FREERTOS)
     /*!< 1: Use RTOS wait if RTOS is present; 0: use normal busy waiting */
 #endif
 

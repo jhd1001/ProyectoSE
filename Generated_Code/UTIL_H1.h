@@ -4,15 +4,13 @@
 **     Project     : Proyecto
 **     Processor   : MK64FN1M0VLQ12
 **     Component   : Utility
-**     Version     : Component 01.157, Driver 01.00, CPU db: 3.00.000
-**     Repository  : My Components
+**     Version     : Component 01.158, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-18, 06:53, # CodeGen: 26
+**     Date/Time   : 2019-03-21, 20:32, # CodeGen: 27
 **     Abstract    :
 **          Contains various utility functions.
 **     Settings    :
 **          Component name                                 : UTIL_H1
-**          SDK                                            : MCUC_H1
 **     Contents    :
 **         strcpy                  - void UTIL_H1_strcpy(uint8_t *dst, size_t dstSize, const unsigned char *src);
 **         strcat                  - void UTIL_H1_strcat(uint8_t *dst, size_t dstSize, const unsigned char *src);
@@ -84,32 +82,36 @@
 **         Deinit                  - void UTIL_H1_Deinit(void);
 **         Init                    - void UTIL_H1_Init(void);
 **
-**     * Copyright (c) 2014-2017, Erich Styger
-**      * Web:         https://mcuoneclipse.com
-**      * SourceForge: https://sourceforge.net/projects/mcuoneclipse
-**      * Git:         https://github.com/ErichStyger/McuOnEclipse_PEx
-**      * All rights reserved.
-**      *
-**      * Redistribution and use in source and binary forms, with or without modification,
-**      * are permitted provided that the following conditions are met:
-**      *
-**      * - Redistributions of source code must retain the above copyright notice, this list
-**      *   of conditions and the following disclaimer.
-**      *
-**      * - Redistributions in binary form must reproduce the above copyright notice, this
-**      *   list of conditions and the following disclaimer in the documentation and/or
-**      *   other materials provided with the distribution.
-**      *
-**      * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-**      * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-**      * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-**      * DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
-**      * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-**      * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-**      * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
-**      * ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-**      * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-**      * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+**Copyright : 1997 - 2015 Freescale Semiconductor, Inc. 
+**All Rights Reserved.
+**
+**Redistribution and use in source and binary forms, with or without modification,
+**are permitted provided that the following conditions are met:
+**
+**o Redistributions of source code must retain the above copyright notice, this list
+**  of conditions and the following disclaimer.
+**
+**o Redistributions in binary form must reproduce the above copyright notice, this
+**  list of conditions and the following disclaimer in the documentation and/or
+**  other materials provided with the distribution.
+**
+**o Neither the name of Freescale Semiconductor, Inc. nor the names of its
+**  contributors may be used to endorse or promote products derived from this
+**  software without specific prior written permission.
+**
+**THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+**ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+**WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+**DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+**ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+**(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+**LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+**ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+**(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+**SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+**
+**http: www.freescale.com
+**mail: support@freescale.com
 ** ###################################################################*/
 /*!
 ** @file UTIL_H1.h
@@ -132,7 +134,7 @@
 /* other includes needed */
 #include <string.h>
 #include <stddef.h> /* for size_t */
-
+/* special version */
 
 #ifdef __cplusplus
 extern "C" {
@@ -1302,7 +1304,7 @@ void UTIL_H1_randomSetSeed(unsigned int seed);
 ** ===================================================================
 */
 
-#ifdef __GNU__ /* HIWARE compiler does not support 64bit data types */
+#ifdef __GNUC__ /* HIWARE compiler does not support 64bit data types */
 int64_t UTIL_H1_map64(int64_t x, int64_t in_min, int64_t in_max, int64_t out_min, int64_t out_max);
 #endif
 /*

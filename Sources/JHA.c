@@ -14,12 +14,31 @@
 
 TIMEREC hora; // hora del sistema
 uint8_t write_buf[12]; // mensaje de la hora del sistema
-double factor = 1.0; // factor aplicable a toma de medidas
+extern double factor; // factor aplicable a toma de medidas
+extern float temperatura; // temperatura medida
+extern bool tFlag;
 char *mensaje = "introduzca la hora (hh:mm): ";
 char *mensaje2 = "Reloj establecido";
 char hora2[81];
 char datos[5];
 bool recibir;
+
+/*
+ *  Calcula la temperatura ambiente
+ */
+void JHA_Temperatura(void) {
+	word valor;
+	AD_H2_GetChanValue16(0, &valor); //
+	// se adapta al valor celsius.
+	// Rango permitido de 0 a 100 g.celsius
+	// se le suman 13 grados para ajuste a temperatura
+	// real
+	temperatura = 100 * valor / 65535.0 + 13.0;
+	char dst[5];
+	UTIL_H1_NumFloatToStr(dst, 5, temperatura, 1);
+	printf("T: %s\r\n", dst);
+	tFlag = TRUE;
+}
 
 void parseHora(char *datos, TIMEREC *hora) {
 	char h[] = {datos[0],datos[1],'\0'};
@@ -107,11 +126,6 @@ void JHA_Factoriza(void) {
 	else if (valores < 32767 && factor == 2.0) factor = 1.0;
 	else if (valores > 32767 && factor == 0.5) factor = 1.0;
 	else factor = factor;
-	/*
-	uint8_t dst[4];
-	UTIL_H1_NumFloatToStr(dst, 4, factor, 1);
-	printf("%s\r\n", dst);
-	*/
 }
 
 void JHA_Run(void) {

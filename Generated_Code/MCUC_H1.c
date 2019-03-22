@@ -4,20 +4,21 @@
 **     Project     : Proyecto
 **     Processor   : MK64FN1M0VLQ12
 **     Component   : McuLibConfig
-**     Version     : Component 01.008, Driver 01.00, CPU db: 3.00.000
+**     Version     : Component 01.012, Driver 01.00, CPU db: 3.00.000
 **     Repository  : My Components
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-18, 06:53, # CodeGen: 26
+**     Date/Time   : 2019-03-21, 20:32, # CodeGen: 27
 **     Abstract    :
-**
+**          Configures the drivers for various SDKs and APIs used.
 **     Settings    :
 **          Component name                                 : MCUC_H1
 **          SDK                                            : Processor Expert
 **          Config Files Folder                            : 
 **     Contents    :
-**         No public methods
+**         Init   - void MCUC_H1_Init(void);
+**         Deinit - void MCUC_H1_Deinit(void);
 **
-**     * Copyright (c) 2016-2017, Erich Styger
+**     * Copyright (c) 2016-2018, Erich Styger
 **      * Web:         https://mcuoneclipse.com
 **      * SourceForge: https://sourceforge.net/projects/mcuoneclipse
 **      * Git:         https://github.com/ErichStyger/McuOnEclipse_PEx
@@ -48,7 +49,7 @@
 ** @file MCUC_H1.c
 ** @version 01.00
 ** @brief
-**
+**          Configures the drivers for various SDKs and APIs used.
 */         
 /*!
 **  @addtogroup MCUC_H1_module MCUC_H1 module documentation
@@ -58,6 +59,34 @@
 /* MODULE MCUC_H1. */
 
 #include "MCUC_H1.h"
+
+/*
+** ===================================================================
+**     Method      :  MCUC_H1_Init (component McuLibConfig)
+**     Description :
+**         Driver initialization method
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void MCUC_H1_Init(void)
+{
+  /* nothing to implement */
+}
+
+/*
+** ===================================================================
+**     Method      :  MCUC_H1_Deinit (component McuLibConfig)
+**     Description :
+**         Driver deinitialization method
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void MCUC_H1_Deinit(void)
+{
+  /* nothing to implement */
+}
 
 /* END MCUC_H1. */
 

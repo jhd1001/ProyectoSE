@@ -8,7 +8,7 @@
 **     Repository  : Kinetis
 **     Datasheet   : K64P144M120SF5RM, Rev.2, January 2014
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-18, 06:53, # CodeGen: 26
+**     Date/Time   : 2019-03-21, 20:32, # CodeGen: 27
 **     Abstract    :
 **
 **     Settings    :
@@ -108,7 +108,8 @@ void Components_Init(void)
 {
   /* ### TimeDate_LDD "TimeDateLdd1" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
   (void)TimeDateLdd1_Init(NULL);
-  /* ### McuLibConfig "MCUC_H1" init code ... */
+  MCUC_H1_Init(); /* ### McuLibConfig "MCUC_H1" init code ... */
+  UTIL_H1_Init(); /* ### Utility "UTIL_H1" init code ... */
   /* ### ADC "AD_H1" init code ... */
   AD_H1_Init();
   /* ### TimerInt_LDD "TimerIntLdd1" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
@@ -120,8 +121,8 @@ void Components_Init(void)
   (void)RealTimeLdd1_Init(NULL);
   /* ### Asynchro serial "AS_H1" init code ... */
   AS_H1_Init();
-  WAIT_E1_Init();
-  /* ### CriticalSection "CS_E1" init code ... */
+  WAIT_E1_Init(); /* ### Wait "WAIT_E1" init code ... */
+  CS_E1_Init(); /* ### CriticalSection "CS_E1" init code ... */
   /* ### Timeout "TMOUT_E1" init code ... */
   TMOUT_E1_Init();
   /* ### SPIMaster_LDD "SM_E1" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
@@ -132,6 +133,11 @@ void Components_Init(void)
   (void)CD1_Init(NULL);
   /* ### SD_Card "SD_E1" init code ... */
   /* ### FAT_FileSystem "FAT_E1" init code ... */
+  /* ### ADC "AD_H2" init code ... */
+  AD_H2_Init();
+  /* ### TimerInt_LDD "TimerIntLdd2" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
+  (void)TimerIntLdd2_Init(NULL);
+  /* ### TimerInt "TI_H2" init code ... */
 }
 #endif /* CPU_COMPONENTS_INIT */
 

@@ -38,6 +38,8 @@ extern "C" {
 
 /* User includes (#include below this line is not maintained by Processor Expert) */
 //#include "JHA.h"
+int tics_Temperatura = 0;
+double factor = 1.0;
 
 /*
 ** ===================================================================
@@ -57,14 +59,32 @@ void Cpu_OnNMI(void)
   /* Write your code here ... */
 }
 
-// cada 12.5 ms mide el potenciometro (CANAL 0)
+// cada 25 ms mide el potenciometro (CANAL 0)
 void TI_H1_OnInterrupt(void) {
 	AD_H1_MeasureChan(FALSE, 0);
+}
+
+// cada 0.5 por el factor s. se miden las entradas
+void TI_H2_OnInterrupt(void) {
+	// se incrementan los contadores de los tics
+	tics_Temperatura++;
+
+	// para la temperatura, se mide cada 5 * 2 / factor tics. 5*2 porque el timer está cada 0.5 s
+	// y la medición base de temperatura debe ser cada 5 s.
+	if (tics_Temperatura > ((5 * 2 / factor) - 1)) {
+		AD_H2_MeasureChan(FALSE, 0);
+		tics_Temperatura = 0;
+	}
 }
 
 // Interrupción del potenciomento, medida disponible
 void AD_H1_OnEnd(void) {
 	JHA_Factoriza();
+}
+
+// Interrupción del sensor de temperatura (AD_H2, canal 0)
+void AD_H2_OnEnd(void) {
+	JHA_Temperatura();
 }
 
 // se produce una interrupción en el pulsador D12
@@ -188,6 +208,25 @@ void AS_H1_OnFullRxBuf(void) {
 */
 /* ===================================================================*/
 void SM_E1_OnBlockSent(LDD_TUserData *UserDataPtr)
+{
+  /* Write your code here ... */
+}
+
+/*
+** ===================================================================
+**     Event       :  AD_H2_OnCalibrationEnd (module Events)
+**
+**     Component   :  AD_H2 [ADC]
+**     Description :
+**         This event is called when the calibration has been finished.
+**         User should check if the calibration pass or fail by
+**         Calibration status method./nThis event is enabled only if
+**         the <Interrupt service/event> property is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void AD_H2_OnCalibrationEnd(void)
 {
   /* Write your code here ... */
 }

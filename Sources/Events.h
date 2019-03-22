@@ -58,6 +58,11 @@
 #include "TMOUT_E1.h"
 #include "CS_E1.h"
 #include "SM_E1.h"
+#include "AD_H2.h"
+#include "AdcLdd2.h"
+#include "TI_H2.h"
+#include "TimerIntLdd2.h"
+#include "TU1.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -235,6 +240,54 @@ void AS_H1_OnFullRxBuf(void);
 */
 /* ===================================================================*/
 void SM_E1_OnBlockSent(LDD_TUserData *UserDataPtr);
+
+/*
+** ===================================================================
+**     Event       :  TI_H2_OnInterrupt (module Events)
+**
+**     Component   :  TI_H2 [TimerInt]
+**     Description :
+**         When a timer interrupt occurs this event is called (only
+**         when the component is enabled - <Enable> and the events are
+**         enabled - <EnableEvent>). This event is enabled only if a
+**         <interrupt service/event> is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void TI_H2_OnInterrupt(void);
+
+void AD_H2_OnEnd(void);
+/*
+** ===================================================================
+**     Event       :  AD_H2_OnEnd (module Events)
+**
+**     Component   :  AD_H2 [ADC]
+**     Description :
+**         This event is called after the measurement (which consists
+**         of <1 or more conversions>) is/are finished.
+**         The event is available only when the <Interrupt
+**         service/event> property is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+void AD_H2_OnCalibrationEnd(void);
+/*
+** ===================================================================
+**     Event       :  AD_H2_OnCalibrationEnd (module Events)
+**
+**     Component   :  AD_H2 [ADC]
+**     Description :
+**         This event is called when the calibration has been finished.
+**         User should check if the calibration pass or fail by
+**         Calibration status method./nThis event is enabled only if
+**         the <Interrupt service/event> property is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
 
 /* END Events */
 

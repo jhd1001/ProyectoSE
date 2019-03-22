@@ -4,10 +4,10 @@
 **     Project     : Proyecto
 **     Processor   : MK64FN1M0VLQ12
 **     Component   : Wait
-**     Version     : Component 01.082, Driver 01.00, CPU db: 3.00.000
+**     Version     : Component 01.083, Driver 01.00, CPU db: 3.00.000
 **     Repository  : My Components
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-18, 06:53, # CodeGen: 26
+**     Date/Time   : 2019-03-21, 20:32, # CodeGen: 27
 **     Abstract    :
 **          Implements busy waiting routines.
 **     Settings    :
@@ -30,7 +30,7 @@
 **         Init           - void WAIT_E1_Init(void);
 **         DeInit         - void WAIT_E1_DeInit(void);
 **
-**     * Copyright (c) 2013-2017, Erich Styger
+**     * Copyright (c) 2013-2018, Erich Styger
 **      * Web:         https://mcuoneclipse.com
 **      * SourceForge: https://sourceforge.net/projects/mcuoneclipse
 **      * Git:         https://github.com/ErichStyger/McuOnEclipse_PEx
@@ -82,14 +82,21 @@
 **     Returns     : Nothing
 ** ===================================================================
 */
-__attribute__((naked, no_instrument_function)) void WAIT_E1_Wait10Cycles(void)
+#ifdef __GNUC__
+  #ifdef __cplusplus  /* gcc 4.7.3 in C++ mode does not like no_instrument_function: error: can't set 'no_instrument_function' attribute after definition */
+  __attribute__((naked))
+  #else
+  __attribute__((naked, no_instrument_function))
+  #endif
+#endif
+void WAIT_E1_Wait10Cycles(void)
 {
   /* This function will wait 10 CPU cycles (including call overhead). */
   /*lint -save -e522 function lacks side effect. */
   /* NOTE: Cortex-M0 and M4 have 1 cycle for a NOP */
   /* Compiler is GNUC */
   __asm (
-   /* bl Wai10Cycles() to here: [4] */
+   /* bl Wait10Cycles() to here: [4] */
    "nop   \n\t" /* [1] */
    "nop   \n\t" /* [1] */
    "nop   \n\t" /* [1] */
@@ -107,7 +114,14 @@ __attribute__((naked, no_instrument_function)) void WAIT_E1_Wait10Cycles(void)
 **     Returns     : Nothing
 ** ===================================================================
 */
-__attribute__((naked, no_instrument_function)) void WAIT_E1_Wait100Cycles(void)
+#ifdef __GNUC__
+#ifdef __cplusplus  /* gcc 4.7.3 in C++ mode does not like no_instrument_function: error: can't set 'no_instrument_function' attribute after definition */
+  __attribute__((naked))
+#else
+  __attribute__((naked, no_instrument_function))
+#endif
+#endif
+void WAIT_E1_Wait100Cycles(void)
 {
   /* This function will spend 100 CPU cycles (including call overhead). */
   /*lint -save -e522 function lacks side effect. */

@@ -55,6 +55,11 @@
 #include "TMOUT_E1.h"
 #include "CS_E1.h"
 #include "SM_E1.h"
+#include "AD_H2.h"
+#include "AdcLdd2.h"
+#include "TI_H2.h"
+#include "TimerIntLdd2.h"
+#include "TU1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -66,6 +71,8 @@
 #include "stdio.h"
 #include "JHA.h"
 #include "AEX.h"
+float temperatura;
+bool tFlag = FALSE;
 
 static FAT_E1_FATFS fileSystemObject;
 /*lint -save  -e970 Disable MISRA rule (6.3) checking. */
@@ -77,20 +84,31 @@ int main(void)
   /*** Processor Expert internal initialization. DON'T REMOVE THIS CODE!!! ***/
   PE_low_level_init();
   /*** End of Processor Expert internal initialization.                    ***/
-
+printf("entrando\r\n");
   /* SD card detection: PTE6 with pull-down! */
+
   PORT_PDD_SetPinPullSelect(PORTE_BASE_PTR, 6, PORT_PDD_PULL_DOWN);
   PORT_PDD_SetPinPullEnable(PORTE_BASE_PTR, 6, PORT_PDD_PULL_ENABLE);
   if (FAT_E1_Init()!=ERR_OK) return -1; /* initialize FAT driver */
+
   if (FAT_E1_mount(&fileSystemObject, (const TCHAR*)"0", 1) != FR_OK) return -1; /* mount file system */
 
+printf("continua\r\n");
+  JHA_Run();
+  for(;;) {
+	  if (tFlag) {
+		  LogToSDCardT(0, 0, 0, temperatura);
+printf("temperatura escrita\r\n");
+		  tFlag = FALSE;
+	  }
+  }
+/*
   for(;;)
   {
-	  JHA_Run();
 	  LogToSDCardLT(1, 2, 3, 4, 5);
 	  WAIT_E1_Waitms(1000);
   }
-
+*/
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
   /*** RTOS startup code. Macro PEX_RTOS_START is defined by the RTOS component. DON'T MODIFY THIS CODE!!! ***/
   #ifdef PEX_RTOS_START

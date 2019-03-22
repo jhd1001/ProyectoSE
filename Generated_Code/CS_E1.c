@@ -4,10 +4,10 @@
 **     Project     : Proyecto
 **     Processor   : MK64FN1M0VLQ12
 **     Component   : CriticalSection
-**     Version     : Component 01.011, Driver 01.00, CPU db: 3.00.000
+**     Version     : Component 01.013, Driver 01.00, CPU db: 3.00.000
 **     Repository  : My Components
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-18, 06:53, # CodeGen: 26
+**     Date/Time   : 2019-03-21, 20:32, # CodeGen: 27
 **     Abstract    :
 **
 **     Settings    :
@@ -19,8 +19,10 @@
 **         CriticalVariable - void CS_E1_CriticalVariable(void);
 **         EnterCritical    - void CS_E1_EnterCritical(void);
 **         ExitCritical     - void CS_E1_ExitCritical(void);
+**         Deinit           - void CS_E1_Deinit(void);
+**         Init             - void CS_E1_Init(void);
 **
-**     * Copyright (c) 2014-2017, Erich Styger
+**     * Copyright (c) 2014-2018, Erich Styger
 **      * Web:         https://mcuoneclipse.com
 **      * SourceForge: https://sourceforge.net/projects/mcuoneclipse
 **      * Git:         https://github.com/ErichStyger/McuOnEclipse_PEx
@@ -109,6 +111,34 @@ void CS_E1_ExitCritical(void)
   *** Implemented as macro in the header file CS_E1.h
 }
 */
+
+/*
+** ===================================================================
+**     Method      :  CS_E1_Deinit (component CriticalSection)
+**     Description :
+**         Driver de-initialization routine
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void CS_E1_Deinit(void)
+{
+  /* nothing needed */
+}
+
+/*
+** ===================================================================
+**     Method      :  CS_E1_Init (component CriticalSection)
+**     Description :
+**         driver initialization routine
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void CS_E1_Init(void)
+{
+  /* nothing needed */
+}
 
 /* END CS_E1. */
 
