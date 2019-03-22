@@ -55,16 +55,11 @@
 #include "TMOUT_E1.h"
 #include "CS_E1.h"
 #include "SM_E1.h"
-<<<<<<< HEAD
 #include "AD_H2.h"
 #include "AdcLdd2.h"
 #include "TI_H2.h"
 #include "TimerIntLdd2.h"
 #include "TU1.h"
-=======
-#include "Bit_E1.h"
-#include "BitIoLdd1.h"
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -98,7 +93,6 @@ printf("entrando\r\n");
 
   if (FAT_E1_mount(&fileSystemObject, (const TCHAR*)"0", 1) != FR_OK) return -1; /* mount file system */
 
-<<<<<<< HEAD
 printf("continua\r\n");
   JHA_Run();
   for(;;) {
@@ -109,14 +103,10 @@ printf("temperatura escrita\r\n");
 	  }
   }
 /*
-=======
-  JHA_Run();
-
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
   for(;;)
   {
 	  LogToSDCardLT(1, 2, 3, 4, 5);
-	  WAIT_E1_Waitms(3000);
+	  WAIT_E1_Waitms(1000);
   }
 */
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/

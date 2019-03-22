@@ -3,11 +3,7 @@
   <Header>
     <Name>Proyecto</Name>
     <SavedBy>jhuidobro</SavedBy>
-<<<<<<< HEAD
     <ModificationStamp>29</ModificationStamp>
-=======
-    <ModificationStamp>27</ModificationStamp>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
     <Date>2019-03-14</Date>
     <IDE>Eclipse IDE</IDE>
     <PEversion>1.12.2.RT7_b1550-0615</PEversion>
@@ -33,11 +29,7 @@
     <UseExistingModules>true</UseExistingModules>
     <RenamePeripheries>false</RenamePeripheries>
     <Autodependency>true</Autodependency>
-<<<<<<< HEAD
     <ProjectCompNumb>44</ProjectCompNumb>
-=======
-    <ProjectCompNumb>43</ProjectCompNumb>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
     <DelUnusedPreviouslyGenFiles>true</DelUnusedPreviouslyGenFiles>
     <GeneratedCodeFrozen>false</GeneratedCodeFrozen>
     <AssignInitComponentNameToPrph>true</AssignInitComponentNameToPrph>
@@ -8429,11 +8421,7 @@
       <Count>0</Count>
     </BoolList_FpgaConfig>
     <BoolList_BeanConfig>
-<<<<<<< HEAD
       <Count>22</Count>
-=======
-      <Count>20</Count>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
       <ItemId0>2</ItemId0>
       <Value0>false</Value0>
       <ItemId1>4</ItemId1>
@@ -8474,13 +8462,10 @@
       <Value18>true</Value18>
       <ItemId19>39</ItemId19>
       <Value19>true</Value19>
-<<<<<<< HEAD
       <ItemId20>41</ItemId20>
       <Value20>true</Value20>
       <ItemId21>43</ItemId21>
       <Value21>true</Value21>
-=======
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
     </BoolList_BeanConfig>
     <BoolList_TaskConfig>
       <Count>0</Count>
@@ -8555,11 +8540,7 @@
       <Count>0</Count>
     </BoolList_FpgaConfig>
     <BoolList_BeanConfig>
-<<<<<<< HEAD
       <Count>22</Count>
-=======
-      <Count>20</Count>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
       <ItemId0>2</ItemId0>
       <Value0>false</Value0>
       <ItemId1>4</ItemId1>
@@ -8600,13 +8581,10 @@
       <Value18>true</Value18>
       <ItemId19>39</ItemId19>
       <Value19>true</Value19>
-<<<<<<< HEAD
       <ItemId20>41</ItemId20>
       <Value20>true</Value20>
       <ItemId21>43</ItemId21>
       <Value21>true</Value21>
-=======
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
     </BoolList_BeanConfig>
     <BoolList_TaskConfig>
       <Count>0</Count>
@@ -25819,7 +25797,6 @@
   </Bean>
   <Bean>
     <Repository>file:/${ProcessorExpert_loc}/Repositories/Kinetis_Repository</Repository>
-<<<<<<< HEAD
     <ComponentUUID>com.freescale.processorexpert.adc</ComponentUUID>
     <BeanType>ADC</BeanType>
     <Name>AD_H2</Name>
@@ -25831,26 +25808,12 @@
     <Comment lines_count="0" />
     <Template />
     <BeanVersion>01.697</BeanVersion>
-=======
-    <ComponentUUID>com.freescale.processorexpert.bitio</ComponentUUID>
-    <BeanType>BitIO</BeanType>
-    <Name>Bit_E1</Name>
-    <CompNumb>39</CompNumb>
-    <CompEnabled>true</CompEnabled>
-    <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
-    <IconName>BITIO</IconName>
-    <UserFolderName />
-    <Comment lines_count="0" />
-    <Template />
-    <BeanVersion>02.086</BeanVersion>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
     <LightErrorsIgnored>false</LightErrorsIgnored>
     <Properties>
       <ItemState>
         <ItemSymbol>DeviceName</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
-<<<<<<< HEAD
         <Value>AD_H2</Value>
       </ItemState>
       <ItemState>
@@ -25870,30 +25833,10 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>FeatCondGrpAdcLDD</ItemSymbol>
-=======
-        <Value>Bit_E1</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>_Pin</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Value>PTD2/LLWU_P13/SPI0_SOUT/UART2_RX/FTM3_CH2/FB_AD4/I2C0_SCL</Value>
-        <SharedPrphMode>false</SharedPrphMode>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>PinSignal</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Value />
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>FeatureCondGrpLDD</ItemSymbol>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
       </ItemState>
       <ItemState>
-<<<<<<< HEAD
         <ItemSymbol>ADC_LDD</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
@@ -25913,34 +25856,12 @@
           <Comment lines_count="0" />
           <Template>ADC\ADC_LDD</Template>
           <BeanVersion>01.183</BeanVersion>
-=======
-        <ItemSymbol>InheritedComponent</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <Index>0</Index>
-        <RegCompType>BitIO_LDD</RegCompType>
-        <RegCompRepository>file:/${ProcessorExpert_loc}/Repositories/Kinetis_Repository</RegCompRepository>
-        <InheritedComponentState>
-          <Repository>file:/${ProcessorExpert_loc}/Repositories/Kinetis_Repository</Repository>
-          <ComponentUUID>com.freescale.processorexpert.ldd.bitio_ldd</ComponentUUID>
-          <BeanType>BitIO_LDD</BeanType>
-          <Name>BitIoLdd1</Name>
-          <CompNumb>40</CompNumb>
-          <CompEnabled>true</CompEnabled>
-          <GenCodeMode>ALWAYS_WRITE</GenCodeMode>
-          <IconName>PORT_LDD</IconName>
-          <UserFolderName />
-          <Comment lines_count="0" />
-          <Template>BitIO\BitIO_LDD</Template>
-          <BeanVersion>01.033</BeanVersion>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
           <LightErrorsIgnored>false</LightErrorsIgnored>
           <Properties>
             <ItemState>
               <ItemSymbol>DeviceName</ItemSymbol>
               <ReadOnly>true</ReadOnly>
               <UserReadOnly>true</UserReadOnly>
-<<<<<<< HEAD
               <Value>AdcLdd2</Value>
             </ItemState>
             <ItemState>
@@ -26042,59 +25963,15 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>DSP56xGrp</ItemSymbol>
-=======
-              <Value>BitIoLdd1</Value>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>_Pin</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-              <Value>PTD2/LLWU_P13/SPI0_SOUT/UART2_RX/FTM3_CH2/FB_AD4/I2C0_SCL</Value>
-              <SharedPrphMode>false</SharedPrphMode>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>PinSignal</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-              <Value />
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>ElProp</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
             </ItemState>
             <ItemState>
-              <ItemSymbol>PullMode</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-              <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <TypeSpecNameState>typePULL</TypeSpecNameState>
-              <Index>5</Index>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>ODE</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-              <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>0</Index>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>Reduce</ItemSymbol>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-            </ItemState>
-            <ItemState>
-<<<<<<< HEAD
               <ItemSymbol>OnErrorInterruptCondGrp</ItemSymbol>
-=======
-              <ItemSymbol>LEDdrive</ItemSymbol>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
             </ItemState>
             <ItemState>
-<<<<<<< HEAD
               <ItemSymbol>ErrorInterrupt</ItemSymbol>
               <Value />
             </ItemState>
@@ -26152,37 +26029,6 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>DmaAutoConfig</ItemSymbol>
-=======
-              <ItemSymbol>Dir</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-              <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>2</Index>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>InitGrp</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>InitDir</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-              <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>InitValue</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-              <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>AutoInitialization</ItemSymbol>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
@@ -26190,7 +26036,6 @@
               <Value>true</Value>
             </ItemState>
             <ItemState>
-<<<<<<< HEAD
               <ItemSymbol>ADchannels</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
@@ -26206,14 +26051,10 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>ChannelMode_Ch0</ItemSymbol>
-=======
-              <ItemSymbol>SafeMode</ItemSymbol>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>0</Index>
-<<<<<<< HEAD
               <Expanded>true</Expanded>
             </ItemState>
             <ItemState>
@@ -26263,40 +26104,10 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>GainScanControlGrp0</ItemSymbol>
-=======
-              <Value>true</Value>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>OptCpuGroup</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
             </ItemState>
             <ItemState>
-              <ItemSymbol>Optimization</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-              <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>0</Index>
-              <Value>true</Value>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>SimulinkGrp</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>DeviceNameSimulink</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>DirSimulink</ItemSymbol>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-            </ItemState>
-            <ItemState>
-<<<<<<< HEAD
               <ItemSymbol>InputPin_Amplifier0</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
@@ -26335,22 +26146,6 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>NegInputPin_Amplifier0</ItemSymbol>
-=======
-              <ItemSymbol>ReentrantMethods</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-              <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>UseRapidGpioOrEnhancedGroup</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>UseRGPIO</ItemSymbol>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
@@ -26358,7 +26153,6 @@
               <Index>0</Index>
               <EnumSymbVal>0</EnumSymbVal>
             </ItemState>
-<<<<<<< HEAD
             <ItemState>
               <ItemSymbol>StaticSampleGroups</ItemSymbol>
               <ReadOnly>false</ReadOnly>
@@ -26405,51 +26199,10 @@
             <ItemState>
               <ItemSymbol>LowPower</ItemSymbol>
               <ReadOnly>false</ReadOnly>
-=======
-          </Properties>
-          <Methods>
-            <ItemState>
-              <ItemSymbol>Init</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-              <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>0</Index>
-              <Value>true</Value>
-              <LastSelection>true</LastSelection>
-              <LastUserSel>yes</LastUserSel>
-              <UsrMethodName>Init</UsrMethodName>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>Deinit</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
               <Value>false</Value>
-              <LastSelection>false</LastSelection>
-              <LastUserSel>no</LastUserSel>
-              <UsrMethodName>Deinit</UsrMethodName>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>GetDir</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-              <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
-              <LastSelection>false</LastSelection>
-              <LastUserSel>no</LastUserSel>
-              <UsrMethodName>GetDir</UsrMethodName>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>SetDir</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
-              <UserReadOnly>false</UserReadOnly>
-              <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
-<<<<<<< HEAD
             </ItemState>
             <ItemState>
               <ItemSymbol>HSCFeatureGroup</ItemSymbol>
@@ -26459,20 +26212,10 @@
             <ItemState>
               <ItemSymbol>HSCmode</ItemSymbol>
               <ReadOnly>false</ReadOnly>
-=======
-              <LastSelection>false</LastSelection>
-              <LastUserSel>never</LastUserSel>
-              <UsrMethodName>SetDir</UsrMethodName>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>SetInput</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
               <Value>false</Value>
-<<<<<<< HEAD
             </ItemState>
             <ItemState>
               <ItemSymbol>HasAsynchroClockOutputEnGroup</ItemSymbol>
@@ -26482,20 +26225,10 @@
             <ItemState>
               <ItemSymbol>AsynchroClock</ItemSymbol>
               <ReadOnly>false</ReadOnly>
-=======
-              <LastSelection>false</LastSelection>
-              <LastUserSel>never</LastUserSel>
-              <UsrMethodName>SetInput</UsrMethodName>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>SetOutput</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
               <UserReadOnly>false</UserReadOnly>
               <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
               <Index>1</Index>
               <Value>false</Value>
-<<<<<<< HEAD
             </ItemState>
             <ItemState>
               <ItemSymbol>ExtendedSampleTimeFeatureGroup</ItemSymbol>
@@ -26615,74 +26348,10 @@
             </ItemState>
             <ItemState>
               <ItemSymbol>DiscontinuousFeatureGroup1</ItemSymbol>
-=======
-              <LastSelection>false</LastSelection>
-              <LastUserSel>never</LastUserSel>
-              <UsrMethodName>SetOutput</UsrMethodName>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>GetVal</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-              <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
-              <LastSelection>false</LastSelection>
-              <LastUserSel>no</LastUserSel>
-              <UsrMethodName>GetVal</UsrMethodName>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>PutVal</ItemSymbol>
-              <ReadOnly>true</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-              <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>0</Index>
-              <Value>true</Value>
-              <LastSelection>false</LastSelection>
-              <LastUserSel>no</LastUserSel>
-              <UsrMethodName>PutVal</UsrMethodName>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>ClrVal</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-              <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
-              <LastSelection>false</LastSelection>
-              <LastUserSel>no</LastUserSel>
-              <UsrMethodName>ClrVal</UsrMethodName>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>SetVal</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-              <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
-              <LastSelection>false</LastSelection>
-              <LastUserSel>no</LastUserSel>
-              <UsrMethodName>SetVal</UsrMethodName>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>NegVal</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-              <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
-              <LastSelection>false</LastSelection>
-              <LastUserSel>no</LastUserSel>
-              <UsrMethodName>NegVal</UsrMethodName>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>56800grp</ItemSymbol>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
             </ItemState>
             <ItemState>
-<<<<<<< HEAD
               <ItemSymbol>TriggerPin</ItemSymbol>
               <ReadOnly>false</ReadOnly>
               <UserReadOnly>false</UserReadOnly>
@@ -30940,58 +30609,10 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>SpeedMode0</ItemSymbol>
-=======
-              <ItemSymbol>ConnectPin</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-              <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
-              <LastSelection>false</LastSelection>
-              <LastUserSel>no</LastUserSel>
-              <UsrMethodName>ConnectPin</UsrMethodName>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>Hcs12Grp</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-            </ItemState>
-            <ItemState>
-              <ItemSymbol>GetRawVal</ItemSymbol>
-              <ReadOnly>false</ReadOnly>
-              <UserReadOnly>false</UserReadOnly>
-              <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-              <Index>1</Index>
-              <Value>false</Value>
-              <LastSelection>false</LastSelection>
-              <LastUserSel>no</LastUserSel>
-              <UsrMethodName>GetRawVal</UsrMethodName>
-            </ItemState>
-          </Methods>
-          <Events />
-        </InheritedComponentState>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>ElProp</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>PullMode</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <TypeSpecNameState>typePULL</TypeSpecNameState>
-        <Index>5</Index>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>ODE</ItemSymbol>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>0</Index>
-<<<<<<< HEAD
         <Value>true</Value>
       </ItemState>
       <ItemState>
@@ -31012,26 +30633,10 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>SpeedMode3</ItemSymbol>
-=======
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>Reduce</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>LEDdrive</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>Dir</ItemSymbol>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>1</Index>
-<<<<<<< HEAD
         <Value>false</Value>
       </ItemState>
       <ItemState>
@@ -31045,28 +30650,13 @@
       <ItemState>
         <ItemSymbol>SpeedMode5</ItemSymbol>
         <ReadOnly>false</ReadOnly>
-=======
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>InitGrp</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>InitDir</ItemSymbol>
-        <ReadOnly>true</ReadOnly>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>1</Index>
         <Value>false</Value>
       </ItemState>
       <ItemState>
-<<<<<<< HEAD
         <ItemSymbol>SpeedMode6</ItemSymbol>
-=======
-        <ItemSymbol>InitValue</ItemSymbol>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
@@ -31074,7 +30664,6 @@
         <Value>false</Value>
       </ItemState>
       <ItemState>
-<<<<<<< HEAD
         <ItemSymbol>SpeedMode7</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
@@ -31183,44 +30772,6 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>GetInputFrequency</ItemSymbol>
-=======
-        <ItemSymbol>SafeMode</ItemSymbol>
-        <ReadOnly>true</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>Optimization</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>SimulinkGrp</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>DeviceNameSimulink</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>DirSimulink</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <ItemWasNeverEnabledInChgScript>true</ItemWasNeverEnabledInChgScript>
-      </ItemState>
-    </Properties>
-    <Methods>
-      <ItemState>
-        <ItemSymbol>GetDir</ItemSymbol>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
@@ -31228,44 +30779,26 @@
         <Value>false</Value>
         <LastSelection>true</LastSelection>
         <LastUserSel>no</LastUserSel>
-<<<<<<< HEAD
         <UsrMethodName>GetInputFrequency</UsrMethodName>
       </ItemState>
       <ItemState>
         <ItemSymbol>SetPeriodTicks</ItemSymbol>
         <ReadOnly>false</ReadOnly>
-=======
-        <UsrMethodName>GetDir</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>SetDir</ItemSymbol>
-        <ReadOnly>true</ReadOnly>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>1</Index>
         <Value>false</Value>
         <LastSelection>true</LastSelection>
-<<<<<<< HEAD
         <LastUserSel>no</LastUserSel>
         <UsrMethodName>SetPeriodTicks</UsrMethodName>
       </ItemState>
       <ItemState>
         <ItemSymbol>GetPeriodTicks</ItemSymbol>
         <ReadOnly>false</ReadOnly>
-=======
-        <LastUserSel>never</LastUserSel>
-        <UsrMethodName>SetDir</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>SetInput</ItemSymbol>
-        <ReadOnly>true</ReadOnly>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>1</Index>
         <Value>false</Value>
-<<<<<<< HEAD
         <LastSelection>true</LastSelection>
         <LastUserSel>no</LastUserSel>
         <UsrMethodName>GetPeriodTicks</UsrMethodName>
@@ -31273,34 +30806,16 @@
       <ItemState>
         <ItemSymbol>ResetCounter</ItemSymbol>
         <ReadOnly>false</ReadOnly>
-=======
-        <LastSelection>false</LastSelection>
-        <LastUserSel>never</LastUserSel>
-        <UsrMethodName>SetInput</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>SetOutput</ItemSymbol>
-        <ReadOnly>true</ReadOnly>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
         <Index>1</Index>
         <Value>false</Value>
-<<<<<<< HEAD
         <LastSelection>true</LastSelection>
         <LastUserSel>no</LastUserSel>
         <UsrMethodName>ResetCounter</UsrMethodName>
       </ItemState>
       <ItemState>
         <ItemSymbol>GetCounterValue</ItemSymbol>
-=======
-        <LastSelection>false</LastSelection>
-        <LastUserSel>never</LastUserSel>
-        <UsrMethodName>SetOutput</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>GetVal</ItemSymbol>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
@@ -31308,7 +30823,6 @@
         <Value>false</Value>
         <LastSelection>true</LastSelection>
         <LastUserSel>no</LastUserSel>
-<<<<<<< HEAD
         <UsrMethodName>GetCounterValue</UsrMethodName>
       </ItemState>
       <ItemState>
@@ -31324,23 +30838,6 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>GetOffsetTicks</ItemSymbol>
-=======
-        <UsrMethodName>GetVal</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>PutVal</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-        <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
-        <Index>0</Index>
-        <Value>true</Value>
-        <LastSelection>true</LastSelection>
-        <LastUserSel>yes</LastUserSel>
-        <UsrMethodName>PutVal</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>ClrVal</ItemSymbol>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
@@ -31348,17 +30845,10 @@
         <Value>false</Value>
         <LastSelection>true</LastSelection>
         <LastUserSel>no</LastUserSel>
-<<<<<<< HEAD
         <UsrMethodName>GetOffsetTicks</UsrMethodName>
       </ItemState>
       <ItemState>
         <ItemSymbol>GetCaptureValue</ItemSymbol>
-=======
-        <UsrMethodName>ClrVal</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>SetVal</ItemSymbol>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
@@ -31366,17 +30856,10 @@
         <Value>false</Value>
         <LastSelection>true</LastSelection>
         <LastUserSel>no</LastUserSel>
-<<<<<<< HEAD
         <UsrMethodName>GetCaptureValue</UsrMethodName>
       </ItemState>
       <ItemState>
         <ItemSymbol>SelectOutputAction</ItemSymbol>
-=======
-        <UsrMethodName>SetVal</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>NegVal</ItemSymbol>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
@@ -31384,7 +30867,6 @@
         <Value>false</Value>
         <LastSelection>true</LastSelection>
         <LastUserSel>no</LastUserSel>
-<<<<<<< HEAD
         <UsrMethodName>SelectOutputAction</UsrMethodName>
       </ItemState>
       <ItemState>
@@ -31397,14 +30879,6 @@
         <LastSelection>true</LastSelection>
         <LastUserSel>no</LastUserSel>
         <UsrMethodName>SelectCaptureEdge</UsrMethodName>
-=======
-        <UsrMethodName>NegVal</UsrMethodName>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>56800grp</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
       </ItemState>
       <ItemState>
         <ItemSymbol>ConnectPin</ItemSymbol>
@@ -31418,7 +30892,6 @@
         <UsrMethodName>ConnectPin</UsrMethodName>
       </ItemState>
       <ItemState>
-<<<<<<< HEAD
         <ItemSymbol>SetOperationMode</ItemSymbol>
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
@@ -31431,14 +30904,6 @@
       </ItemState>
       <ItemState>
         <ItemSymbol>GetDriverState</ItemSymbol>
-=======
-        <ItemSymbol>Hcs12Grp</ItemSymbol>
-        <ReadOnly>false</ReadOnly>
-        <UserReadOnly>false</UserReadOnly>
-      </ItemState>
-      <ItemState>
-        <ItemSymbol>GetRawVal</ItemSymbol>
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
         <ReadOnly>false</ReadOnly>
         <UserReadOnly>false</UserReadOnly>
         <PropertyModelIsAutomatic>false</PropertyModelIsAutomatic>
@@ -31446,7 +30911,6 @@
         <Value>false</Value>
         <LastSelection>true</LastSelection>
         <LastUserSel>no</LastUserSel>
-<<<<<<< HEAD
         <UsrMethodName>GetDriverState</UsrMethodName>
       </ItemState>
     </Methods>
@@ -31602,12 +31066,6 @@
         <Value>TU1_OnChannel7</Value>
       </ItemState>
     </Events>
-=======
-        <UsrMethodName>GetRawVal</UsrMethodName>
-      </ItemState>
-    </Methods>
-    <Events />
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
   </Bean>
   <ComponentInitializationSequence>
     <EmptySection_DummyValue />

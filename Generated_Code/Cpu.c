@@ -8,11 +8,7 @@
 **     Repository  : Kinetis
 **     Datasheet   : K64P144M120SF5RM, Rev.2, January 2014
 **     Compiler    : GNU C Compiler
-<<<<<<< HEAD
 **     Date/Time   : 2019-03-21, 20:32, # CodeGen: 27
-=======
-**     Date/Time   : 2019-03-20, 06:19, # CodeGen: 27
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
 **     Abstract    :
 **
 **     Settings    :
@@ -137,16 +133,11 @@ void Components_Init(void)
   (void)CD1_Init(NULL);
   /* ### SD_Card "SD_E1" init code ... */
   /* ### FAT_FileSystem "FAT_E1" init code ... */
-<<<<<<< HEAD
   /* ### ADC "AD_H2" init code ... */
   AD_H2_Init();
   /* ### TimerInt_LDD "TimerIntLdd2" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
   (void)TimerIntLdd2_Init(NULL);
   /* ### TimerInt "TI_H2" init code ... */
-=======
-  /* ### BitIO_LDD "BitIoLdd1" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
-  (void)BitIoLdd1_Init(NULL);
->>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
 }
 #endif /* CPU_COMPONENTS_INIT */
 
