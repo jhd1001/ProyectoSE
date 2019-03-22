@@ -1,0 +1,16 @@
+0:0:0:0	X:1	Y:2	Z:3	Luminosidad:4	Temperatura:5ºC
+0:0:1:65	X:1	Y:2	Z:3	Luminosidad:4	Temperatura:5ºC
+0:0:2:85	X:1	Y:2	Z:3	Luminosidad:4	Temperatura:5ºC
+0:0:3:97	X:1	Y:2	Z:3	Luminosidad:4	Temperatura:5ºC
+0:0:5:10	X:1	Y:2	Z:3	Luminosidad:4	Temperatura:5ºC
+0:0:6:22	X:1	Y:2	Z:3	Luminosidad:4	Temperatura:5ºC
+0:0:7:35	X:1	Y:2	Z:3	Luminosidad:4	Temperatura:5ºC
+0:0:8:47	X:1	Y:2	Z:3	Luminosidad:4	Temperatura:5ºC
+0:0:9:57	X:1	Y:2	Z:3	Luminosidad:4	Temperatura:5ºC
+0:0:10:70	X:1	Y:2	Z:3	Luminosidad:4	Temperatura:5ºC
+0:0:11:82	X:1	Y:2	Z:3	Luminosidad:4	Temperatura:5ºC
+0:0:12:92	X:1	Y:2	Z:3	Luminosidad:4	Temperatura:5ºC
+0:0:0:5	X:1	Y:2	Z:3	Luminosidad:4	Temperatura:5ºC
+0:0:3:30	X:1	Y:2	Z:3	Luminosidad:4	Temperatura:5ºC
+0:0:6:55	X:1	Y:2	Z:3	Luminosidad:4	Temperatura:5ºC
+0:0:9:77	X:1	Y:2	Z:3	Luminosidad:4	Temperatura:5ºC

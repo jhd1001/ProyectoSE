@@ -53,6 +53,7 @@
   </PATHS>
   <FILES>
     <GeneratedCs>
+<<<<<<< HEAD
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\AD_H1.c</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\AD_H2.c</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Generated_Code\AS_H1.c</PathName>
@@ -191,6 +192,140 @@
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Static_Code\System\CPU_Init.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Static_Code\System\PDD_Includes.h</PathName>
       <PathName>C:\Users\jhuidobro\Documents\GitHub\ProyectoSE\Static_Code\System\Peripherals_Init.h</PathName>
+=======
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\AD_H1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\AS_H1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\ASerialLdd1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\AdcLdd1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\BitIoLdd1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\Bit_E1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\CD1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\CS_E1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\Cpu.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\EInt_H1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\ExtIntLdd1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\FAT_E1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\FC16_H1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\MCUC_H1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\PE_LDD.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\RealTimeLdd1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\SD_E1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\SM_E1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\SS1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\TI_H1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\TMOUT_E1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\TU_H1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\TU_H2.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\TU_H3.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\TimeDateLdd1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\TimerIntLdd1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\TmDt_H1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\UTIL_H1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\WAIT_E1.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\ff.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Project_Settings\Startup_Code\startup.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Sources\AEX.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Sources\Events.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Sources\JHA.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Sources\main.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\System\CPU_Init.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\System\Peripherals_Init.c</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\System\Vectors.c</PathName>
+    </GeneratedCs>
+    <GeneratedHs>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\AD_H1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\AS_H1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\ASerialLdd1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\AdcLdd1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\BitIoLdd1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\Bit_E1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\CD1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\CPU_Config.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\CS_E1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\CS_E1config.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\Cpu.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\EInt_H1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\ExtIntLdd1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\FAT_E1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\FC16_H1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\IO_Map.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\Init_Config.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\MCUC_H1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\MCUC_H1config.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\PE_Const.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\PE_Error.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\PE_LDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\PE_Types.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\RealTimeLdd1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\SD_E1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\SM_E1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\SS1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\TI_H1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\TMOUT_E1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\TMOUT_E1config.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\TU_H1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\TU_H2.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\TU_H3.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\TimeDateLdd1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\TimerIntLdd1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\TmDt_H1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\UTIL_H1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\UTIL_H1config.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\Vectors_Config.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\WAIT_E1.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\WAIT_E1config.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\diskio.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\ff.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\ffconf.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Generated_Code\integer.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Sources\AEX.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Sources\Events.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Sources\JHA.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\IO_Map\MK64F12.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\ADC_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\CAN_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\CMP_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\CMT_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\CRC_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\DAC_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\DMAMUX_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\DMA_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\ENET_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\EWM_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\FMC_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\FTFE_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\FTM_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\GPIO_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\I2C_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\LLWU_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\LPTMR_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\MCG_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\MCM_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\OSC_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\PDB_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\PDD_Types.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\PIT_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\PMC_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\PORT_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\RCM_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\RNGA_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\RTC_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\SAI_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\SCB_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\SDHC_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\SIM_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\SMC_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\SPI_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\SysTick_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\UART_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\USBDCD_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\USB_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\VREF_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\PDD\WDOG_PDD.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\System\CPU_Init.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\System\PDD_Includes.h</PathName>
+      <PathName>D:\Projects\Repos\ProyectoSE\trunk\Static_Code\System\Peripherals_Init.h</PathName>
+>>>>>>> bf8b829d402269c68ce878df1cf79215699ec76e
     </GeneratedHs>
   </FILES>
   <OPTIONS>
