@@ -7,12 +7,12 @@
 **     Version     : Component 01.083, Driver 01.00, CPU db: 3.00.000
 **     Repository  : My Components
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-22, 17:52, # CodeGen: 1
+**     Date/Time   : 2019-03-22, 20:02, # CodeGen: 2
 **     Abstract    :
 **          Implements busy waiting routines.
 **     Settings    :
 **          Component name                                 : WAIT1
-**          SDK                                            : MCUC1
+**          SDK                                            : MCUC_H1
 **          Use Cycle Counter                              : Disabled
 **          Manual Clock Values                            : Disabled
 **          Delay100usFunction                             : Delay100US

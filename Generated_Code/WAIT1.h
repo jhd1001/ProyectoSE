@@ -6,7 +6,7 @@
 **     Component   : Wait
 **     Version     : Component 01.083, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-22, 17:52, # CodeGen: 1
+**     Date/Time   : 2019-03-22, 20:02, # CodeGen: 2
 **     Abstract    :
 **          Implements busy waiting routines.
 **     Settings    :
@@ -73,7 +73,7 @@
 #define __WAIT1_H
 
 /* MODULE WAIT1. */
-#include "MCUC1.h" /* SDK and API used */
+#include "MCUC_H1.h" /* SDK and API used */
 #include "WAIT1config.h" /* configuration */
 
 /* other includes needed */
@@ -89,7 +89,7 @@ extern "C" {
 #endif
 
 
-#if MCUC1_CONFIG_SDK_VERSION_USED == MCUC1_CONFIG_SDK_PROCESSOR_EXPERT
+#if MCUC_H1_CONFIG_SDK_VERSION_USED == MCUC_H1_CONFIG_SDK_PROCESSOR_EXPERT
   #define WAIT1_INSTR_CLOCK_HZ       CPU_CORE_CLK_HZ /* for Kinetis, use core clock as base for instruction execution */
 #else
   extern uint32_t SystemCoreClock; /* clock frequency variable defined system_<device>.h of the SDK */

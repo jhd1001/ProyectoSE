@@ -7,7 +7,7 @@
 **     Component   : FXOS8700CQ
 **     Version     : Component 01.031, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-22, 17:52, # CodeGen: 1
+**     Date/Time   : 2019-03-22, 20:02, # CodeGen: 2
 **     Abstract    :
 **         Implements a Driver for the MMA8451 accelerometer from Freescale.
 **     Settings    :
@@ -101,13 +101,13 @@
 #define __FX1_H
 
 /* MODULE FX1. */
-#include "MCUC1.h" /* SDK and API used */
+#include "MCUC_H1.h" /* SDK and API used */
 #include "FX1config.h" /* configuration */
 
 /* Include inherited components */
 #include "GI2C1.h"
 #include "WAIT1.h"
-#include "MCUC1.h"
+#include "MCUC_H1.h"
 
 #ifdef __cplusplus
 extern "C" {

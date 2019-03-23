@@ -7,7 +7,7 @@
 **     Version     : Component 01.697, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-22, 17:52, # CodeGen: 1
+**     Date/Time   : 2019-03-23, 17:54, # CodeGen: 5
 **     Abstract    :
 **         This device "ADC" implements an A/D converter,
 **         its control methods and interrupt/event handling procedure.
@@ -19,12 +19,15 @@
 **          Interrupt service/event                        : Enabled
 **            A/D interrupt                                : INT_ADC0
 **            A/D interrupt priority                       : medium priority
-**          A/D channels                                   : 2
+**          A/D channels                                   : 3
 **            Channel0                                     : 
 **              A/D channel (pin)                          : ADC0_DP1
 **              Mode select                                : Single Ended
 **            Channel1                                     : 
 **              A/D channel (pin)                          : ADC0_DM1
+**              Mode select                                : Single Ended
+**            Channel2                                     : 
+**              A/D channel (pin)                          : ADC0_SE12/PTB2/I2C0_SCL/UART0_RTS_b/ENET0_1588_TMR0/FTM0_FLT3
 **              Mode select                                : Single Ended
 **          A/D resolution                                 : 16 bits
 **          Conversion time                                : 19.230769 µs
@@ -42,9 +45,11 @@
 **            Low speed mode                               : This component disabled
 **            Slow speed mode                              : This component disabled
 **     Contents    :
-**         Measure    - byte AD1_Measure(bool WaitForResult);
-**         GetValue16 - byte AD1_GetValue16(word *Values);
-**         Calibrate  - byte AD1_Calibrate(bool WaitForResult);
+**         Measure        - byte AD1_Measure(bool WaitForResult);
+**         MeasureChan    - byte AD1_MeasureChan(bool WaitForResult, byte Channel);
+**         GetValue16     - byte AD1_GetValue16(word *Values);
+**         GetChanValue16 - byte AD1_GetChanValue16(byte Channel, word *Value);
+**         Calibrate      - byte AD1_Calibrate(bool WaitForResult);
 **
 **     Copyright : 1997 - 2015 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
@@ -105,14 +110,15 @@ extern "C" {
 
 static volatile byte SumChan;          /* Counter of measured channels */
 static volatile byte ModeFlg;          /* Current state of device */
-LDD_TDeviceData *AdcLdd1_DeviceDataPtr; /* Device data pointer */
+LDD_TDeviceData *AdcLdd3_DeviceDataPtr; /* Device data pointer */
 /* Sample group configuration */
 static LDD_ADC_TSample SampleGroup[AD1_SAMPLE_GROUP_SIZE];
+static const  byte Table[3] = {0x01U,0x02U,0x04U};  /* Table of mask constants */
 /* Measure multiple channels flags  */
 /* Temporary buffer for converting results */
 volatile word AD1_OutV[AD1_SAMPLE_GROUP_SIZE]; /* Sum of measured values */
 /* Calibration in progress flag */
-static volatile bool OutFlg;           /* Measurement finish flag */
+static volatile byte OutFlg;           /* Measurement finish flag */
 
 /*
 ** ===================================================================
@@ -128,6 +134,7 @@ static void ClrSumV(void)
 {
   AD1_OutV[0] = 0U;                    /* Set variable for storing measured values to 0 */
   AD1_OutV[1] = 0U;                    /* Set variable for storing measured values to 0 */
+  AD1_OutV[2] = 0U;                    /* Set variable for storing measured values to 0 */
 }
 
 /*
@@ -144,12 +151,19 @@ static void ClrSumV(void)
 void AD1_HWEnDi(void)
 {
   if (ModeFlg) {                       /* Start or stop measurement? */
-    OutFlg = FALSE;                    /* Output values aren't available */
-    SumChan = 0U;                      /* Set the counter of measured channels to 0 */
-    ClrSumV();                         /* Clear measured values */
-    SampleGroup[0].ChannelIdx = 0U;
-    (void)AdcLdd1_CreateSampleGroup(AdcLdd1_DeviceDataPtr, (LDD_ADC_TSample *)SampleGroup, 1U); /* Configure sample group */
-    (void)AdcLdd1_StartSingleMeasurement(AdcLdd1_DeviceDataPtr);
+    if (ModeFlg != SINGLE) {
+      OutFlg = 0U;                     /* Output values aren't available */
+      SumChan = 0U;                    /* Set the counter of measured channels to 0 */
+      ClrSumV();                       /* Clear measured values */
+      SampleGroup[0].ChannelIdx = 0U;
+    }
+    else {
+      OutFlg &= (byte)(~(byte)Table[SumChan]); /* Output value isn't available */
+      AD1_OutV[SumChan] = 0U;          /* Set variable for storing measured values to 0 */
+      SampleGroup[0].ChannelIdx = SumChan;
+    }
+    (void)AdcLdd3_CreateSampleGroup(AdcLdd3_DeviceDataPtr, (LDD_ADC_TSample *)SampleGroup, 1U); /* Configure sample group */
+    (void)AdcLdd3_StartSingleMeasurement(AdcLdd3_DeviceDataPtr);
   }
 }
 
@@ -201,6 +215,60 @@ byte AD1_Measure(bool WaitForResult)
 
 /*
 ** ===================================================================
+**     Method      :  AD1_MeasureChan (component ADC)
+*/
+/*!
+**     @brief
+**         This method performs measurement on one channel. (Note: If
+**         the [number of conversions] is more than one the conversion
+**         of the A/D channel is performed specified number of times.)
+**     @param
+**         WaitForResult   - Wait for a result of
+**                           conversion. If the [interrupt service] is
+**                           disabled and at the same time a [number of
+**                           conversions] is greater than 1, the
+**                           WaitForResult parameter is ignored and the
+**                           method waits for each result every time.
+**     @param
+**         Channel         - Channel number. If only one
+**                           channel in the component is set this
+**                           parameter is ignored, because the parameter
+**                           is set inside this method.
+**     @return
+**                         - Error code, possible codes:
+**                           ERR_OK - OK
+**                           ERR_SPEED - This device does not work in
+**                           the active speed mode
+**                           ERR_DISABLED - Device is disabled
+**                           ERR_BUSY - A conversion is already running
+**                           ERR_RANGE - Parameter "Channel" out of range
+*/
+/* ===================================================================*/
+/*
+The definition of method:
+byte AD1_MeasureChan(bool WaitForResult, byte Channel)
+was optimised based on the current component setting. An appropriate macro has been defined 
+in the AD1.h to maintain API compatibility.
+*/
+byte AD1_MeasureChan(bool WaitForResult,byte Channel)
+{
+  if (Channel >= 3U) {                 /* Is channel number greater than or equal to 3 */
+    return ERR_RANGE;                  /* If yes then error */
+  }
+  if (ModeFlg != STOP) {               /* Is the device in different mode than "stop"? */
+    return ERR_BUSY;                   /* If yes then error */
+  }
+  ModeFlg = SINGLE;                    /* Set state of device to the measure mode */
+  SumChan = Channel;                   /* Set required channel */
+  AD1_HWEnDi();                        /* Enable the device */
+  if (WaitForResult) {                 /* Is WaitForResult TRUE? */
+    while (ModeFlg == SINGLE) {}       /* If yes then wait for end of measurement */
+  }
+  return ERR_OK;                       /* OK */
+}
+
+/*
+** ===================================================================
 **     Method      :  AD1_GetValue16 (component ADC)
 */
 /*!
@@ -229,11 +297,58 @@ byte AD1_Measure(bool WaitForResult)
 /* ===================================================================*/
 byte AD1_GetValue16(word *Values)
 {
-  if (!OutFlg) {                       /* Is output flag set? */
+  if (OutFlg != 0x07U) {               /* Is output flag set? */
     return ERR_NOTAVAIL;               /* If no then error */
   }
   Values[0] = AD1_OutV[0];             /* Save measured values to the output buffer */
   Values[1] = AD1_OutV[1];             /* Save measured values to the output buffer */
+  Values[2] = AD1_OutV[2];             /* Save measured values to the output buffer */
+  return ERR_OK;                       /* OK */
+}
+
+/*
+** ===================================================================
+**     Method      :  AD1_GetChanValue16 (component ADC)
+*/
+/*!
+**     @brief
+**         This method returns the last measured value of the required
+**         channel. Compared with [GetChanValue] method this method
+**         returns more accurate result if the [number of conversions]
+**         is greater than 1 and [AD resolution] is less than 16 bits.
+**         In addition, the user code dependency on [AD resolution] is
+**         eliminated.
+**     @param
+**         Channel         - Channel number. If only one
+**                           channel in the component is set then this
+**                           parameter is ignored.
+**     @param
+**         Value           - Pointer to the measured value.
+**     @return
+**                         - Error code, possible codes:
+**                           ERR_OK - OK
+**                           ERR_SPEED - This device does not work in
+**                           the active speed mode
+**                           ERR_NOTAVAIL - Requested value not
+**                           available
+**                           ERR_RANGE - Parameter "Channel" out of
+**                           range
+**                           ERR_OVERRUN - External trigger overrun flag
+**                           was detected after the last value(s) was
+**                           obtained (for example by GetValue). This
+**                           error may not be supported on some CPUs
+**                           (see generated code).
+*/
+/* ===================================================================*/
+byte AD1_GetChanValue16(byte Channel, word *Value)
+{
+  if (Channel >= 3U) {                 /* Is channel number greater than or equal to 3 */
+    return ERR_RANGE;                  /* If yes then error */
+  }
+  if ((OutFlg & Table[Channel]) == 0U) { /* Is output flag set? */
+    return ERR_NOTAVAIL;               /* If no then error */
+  }
+  *Value = AD1_OutV[Channel];          /* Save measured values to the output buffer */
   return ERR_OK;                       /* OK */
 }
 
@@ -268,13 +383,13 @@ byte AD1_Calibrate(bool WaitForResult)
     return ERR_BUSY;                   /* If yes then error */
   }
   ModeFlg = CALIBRATING;               /* Set state of device to the calibration mode */
-  (void)AdcLdd1_GetMeasurementCompleteStatus(AdcLdd1_DeviceDataPtr); /* Clear measurement complete status */
-  (void)AdcLdd1_StartCalibration(AdcLdd1_DeviceDataPtr); /* Start calibration */
+  (void)AdcLdd3_GetMeasurementCompleteStatus(AdcLdd3_DeviceDataPtr); /* Clear measurement complete status */
+  (void)AdcLdd3_StartCalibration(AdcLdd3_DeviceDataPtr); /* Start calibration */
   if (!WaitForResult) {                /* If doesn't wait for result */
     return ERR_OK;                     /* then return ERR_OK, but user have to check the result of calibration e.g. by GetCalibrationStatus method */
   }
-  while (!AdcLdd1_GetMeasurementCompleteStatus(AdcLdd1_DeviceDataPtr)) {}; /* Wait until calibration ends */
-  if (AdcLdd1_GetCalibrationResultStatus(AdcLdd1_DeviceDataPtr) != ERR_OK) { /* If calibration failed flag is set */
+  while (!AdcLdd3_GetMeasurementCompleteStatus(AdcLdd3_DeviceDataPtr)) {}; /* Wait until calibration ends */
+  if (AdcLdd3_GetCalibrationResultStatus(AdcLdd3_DeviceDataPtr) != ERR_OK) { /* If calibration failed flag is set */
     ModeFlg = STOP;                    /* Set the device to the stop mode */
     return ERR_FAILED;                 /* Return ERR_FAILED error code */
   }
@@ -292,27 +407,35 @@ byte AD1_Calibrate(bool WaitForResult)
 **         This method is internal. It is used by Processor Expert only.
 ** ===================================================================
 */
-void AdcLdd1_OnMeasurementComplete(LDD_TUserData *UserDataPtr)
+void AdcLdd3_OnMeasurementComplete(LDD_TUserData *UserDataPtr)
 {
   (void)UserDataPtr;                   /* Parameter is not used, suppress unused argument warning */
   if (ModeFlg == CALIBRATING) {        /* If the driver is in CALIBRATING mode */
-    (void)AdcLdd1_GetCalibrationResultStatus(AdcLdd1_DeviceDataPtr);
+    (void)AdcLdd3_GetCalibrationResultStatus(AdcLdd3_DeviceDataPtr);
     ModeFlg = STOP;                    /* Set the device to the stop mode */
     AD1_OnCalibrationEnd();            /* If yes then invoke user event */
     return;                            /* Return from interrupt */
   }
-  AdcLdd1_GetMeasuredValues(AdcLdd1_DeviceDataPtr, (LDD_TData *)&AD1_OutV[SumChan]);
-  SumChan++;                           /* Increase counter of measured channels*/
-  if (SumChan == 2U) {                 /* Is number of measured channels equal to the number of channels used in the component? */
-    SumChan = 0U;                      /* If yes then set the counter of measured channels to 0 */
-    OutFlg = TRUE;                     /* Measured values are available */
+  if (ModeFlg != SINGLE) {
+    AdcLdd3_GetMeasuredValues(AdcLdd3_DeviceDataPtr, (LDD_TData *)&AD1_OutV[SumChan]);
+    SumChan++;                         /* Increase counter of measured channels*/
+    if (SumChan == 3U) {               /* Is number of measured channels equal to the number of channels used in the component? */
+      SumChan = 0U;                    /* If yes then set the counter of measured channels to 0 */
+      OutFlg = 0x07U;                  /* Measured values are available */
+      AD1_OnEnd();                     /* If yes then invoke user event */
+      ModeFlg = STOP;                  /* Set the device to the stop mode */
+      return;                          /* Return from interrupt */
+    }
+    SampleGroup[0].ChannelIdx = SumChan; /* Start measurement of next channel */
+    (void)AdcLdd3_CreateSampleGroup(AdcLdd3_DeviceDataPtr, (LDD_ADC_TSample *)SampleGroup, 1U); /* Configure sample group */
+    (void)AdcLdd3_StartSingleMeasurement(AdcLdd3_DeviceDataPtr);
+  }
+  else {
+    AdcLdd3_GetMeasuredValues(AdcLdd3_DeviceDataPtr, (LDD_TData *)&AD1_OutV[SumChan]);
+    OutFlg |= Table[SumChan];          /* Value of measured channel is available */
     AD1_OnEnd();                       /* If yes then invoke user event */
     ModeFlg = STOP;                    /* Set the device to the stop mode */
-    return;                            /* Return from interrupt */
   }
-  SampleGroup[0].ChannelIdx = SumChan; /* Start measurement of next channel */
-  (void)AdcLdd1_CreateSampleGroup(AdcLdd1_DeviceDataPtr, (LDD_ADC_TSample *)SampleGroup, 1U); /* Configure sample group */
-  (void)AdcLdd1_StartSingleMeasurement(AdcLdd1_DeviceDataPtr);
 }
 
 /*
@@ -328,9 +451,9 @@ void AdcLdd1_OnMeasurementComplete(LDD_TUserData *UserDataPtr)
 */
 void AD1_Init(void)
 {
-  OutFlg = FALSE;                      /* No measured value */
+  OutFlg = 0U;                         /* No measured value */
   ModeFlg = STOP;                      /* Device isn't running */
-  AdcLdd1_DeviceDataPtr = AdcLdd1_Init(NULL); /* Calling init method of the inherited component */
+  AdcLdd3_DeviceDataPtr = AdcLdd3_Init(NULL); /* Calling init method of the inherited component */
 }
 
 /* END AD1. */

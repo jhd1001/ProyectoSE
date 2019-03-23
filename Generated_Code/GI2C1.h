@@ -6,7 +6,7 @@
 **     Component   : GenericI2C
 **     Version     : Component 01.042, Driver 01.00, CPU db: 3.00.000
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-22, 17:52, # CodeGen: 1
+**     Date/Time   : 2019-03-22, 20:02, # CodeGen: 2
 **     Abstract    :
 **         This component implements a generic I2C driver wrapper to work both with LDD and non-LDD I2C components.
 **     Settings    :
@@ -87,7 +87,7 @@
 #define __GI2C1_H
 
 /* MODULE GI2C1. */
-#include "MCUC1.h" /* SDK and API used */
+#include "MCUC_H1.h" /* SDK and API used */
 #include "GI2C1config.h" /* configuration */
 
 

@@ -38,10 +38,10 @@
 #include "TU_H1.h"
 #include "UTIL_H1.h"
 #include "MCUC_H1.h"
-#include "AD_H1.h"
-#include "AdcLdd1.h"
+#include "ExtIntLdd1.h"
 #include "TI_H1.h"
 #include "TimerIntLdd1.h"
+#include "RealTimeLdd1.h"
 #include "TU_H2.h"
 #include "EInt_H1.h"
 #include "ExtIntLdd1.h"
@@ -58,11 +58,16 @@
 #include "TMOUT_E1.h"
 #include "CS_E1.h"
 #include "SM_E1.h"
-#include "AD_H2.h"
-#include "AdcLdd2.h"
-#include "TI_H2.h"
-#include "TimerIntLdd2.h"
+#include "TU_E1.h"
+#include "GI2C1.h"
+#include "WAIT1.h"
+#include "CI2C1.h"
 #include "TU1.h"
+#include "Tick.h"
+#include "TimerIntLdd3.h"
+#include "FX1.h"
+#include "AD1.h"
+#include "AdcLdd3.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -241,22 +246,6 @@ void AS_H1_OnFullRxBuf(void);
 /* ===================================================================*/
 void SM_E1_OnBlockSent(LDD_TUserData *UserDataPtr);
 
-/*
-** ===================================================================
-**     Event       :  TI_H2_OnInterrupt (module Events)
-**
-**     Component   :  TI_H2 [TimerInt]
-**     Description :
-**         When a timer interrupt occurs this event is called (only
-**         when the component is enabled - <Enable> and the events are
-**         enabled - <EnableEvent>). This event is enabled only if a
-**         <interrupt service/event> is enabled.
-**     Parameters  : None
-**     Returns     : Nothing
-** ===================================================================
-*/
-void TI_H2_OnInterrupt(void);
-
 void AD_H2_OnEnd(void);
 /*
 ** ===================================================================
@@ -288,6 +277,70 @@ void AD_H2_OnCalibrationEnd(void);
 **     Returns     : Nothing
 ** ===================================================================
 */
+
+void SELECT_OnEnd(void);
+/*
+** ===================================================================
+**     Event       :  SELECT_OnEnd (module Events)
+**
+**     Component   :  SELECT [ADC]
+**     Description :
+**         This event is called after the measurement (which consists
+**         of <1 or more conversions>) is/are finished.
+**         The event is available only when the <Interrupt
+**         service/event> property is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+void AD1_OnEnd(void);
+/*
+** ===================================================================
+**     Event       :  AD1_OnEnd (module Events)
+**
+**     Component   :  AD1 [ADC]
+**     Description :
+**         This event is called after the measurement (which consists
+**         of <1 or more conversions>) is/are finished.
+**         The event is available only when the <Interrupt
+**         service/event> property is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+void AD1_OnCalibrationEnd(void);
+/*
+** ===================================================================
+**     Event       :  AD1_OnCalibrationEnd (module Events)
+**
+**     Component   :  AD1 [ADC]
+**     Description :
+**         This event is called when the calibration has been finished.
+**         User should check if the calibration pass or fail by
+**         Calibration status method./nThis event is enabled only if
+**         the <Interrupt service/event> property is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+
+/*
+** ===================================================================
+**     Event       :  Tick_OnInterrupt (module Events)
+**
+**     Component   :  Tick [TimerInt]
+**     Description :
+**         When a timer interrupt occurs this event is called (only
+**         when the component is enabled - <Enable> and the events are
+**         enabled - <EnableEvent>). This event is enabled only if a
+**         <interrupt service/event> is enabled.
+**     Parameters  : None
+**     Returns     : Nothing
+** ===================================================================
+*/
+void Tick_OnInterrupt(void);
 
 /* END Events */
 

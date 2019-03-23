@@ -5,16 +5,15 @@
  *      Author: Admin
  */
 
-#include "SELECT.h"
 #include "AD1.h"
 #include "app_Selector.h"
 
-static uint16_t rauw_ADCRaw[2u];
-uint16_t ruw_SelectorRaw;
-unsigned char rub_Mode;
-uint16_t Temperatura;
-uint16_t Luminosidad;
+//uint16_t ruw_SelectorRaw;
+//unsigned char rub_Mode;
+//uint16_t Temperatura;
+//uint16_t Luminosidad;
 unsigned char rub_Jump = FALSE;
+extern int factor;
 
 unsigned char raub_AccelExecTime[N_MODES] =
 {
@@ -37,27 +36,22 @@ unsigned char raub_LumExecTime[N_MODES] =
 		7
 };
 
-void app_SelectorTask(void)
-{
+/*
+ *  Calcula el factor o índice que hay que aplicar a la periodicidad de las medidas.
+ *  Valores posibles:
+ *  - 0 si 0 o < 32767 cuando va creciendo
+ *  - 1 si <32767 cuando va decreciendo, si 32767 o si >32767 cuando va creciendo
+ *  - 2 si 65535 o si >32767 cuando va decreciendo
+ */
+void app_SelectorTask(void) {
 	rub_Jump = FALSE;
-
-	SELECT_Measure(TRUE);
-	SELECT_GetValue16(&ruw_SelectorRaw);
-	if(ruw_SelectorRaw < 30000)
-	{
-		rub_Mode = 0u;
-	}
-	else if(ruw_SelectorRaw > 60000)
-	{
-		rub_Mode = 2u;
-	}
-	else
-	{
-		rub_Mode = 1u;
-	}
-
-	AD1_Measure(TRUE);
-	(void)AD1_GetValue16(rauw_ADCRaw);
-	Temperatura = rauw_ADCRaw[0u] / 200u;
-	Luminosidad = rauw_ADCRaw[1u] / 655u;
+	word valores;
+	AD1_GetChanValue16(2, &valores);
+	if (valores==0) factor = 0;
+	else if (valores==32767) factor = 1;
+	else if (valores==65535) factor = 2;
+	else if (valores < 32767 && factor == 2) factor = 1;
+	else if (valores > 32767 && factor == 0) factor = 1;
+	else factor = factor;
 }
+

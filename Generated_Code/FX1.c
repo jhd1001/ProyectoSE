@@ -8,7 +8,7 @@
 **     Version     : Component 01.031, Driver 01.00, CPU db: 3.00.000
 **     Repository  : My Components
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-22, 17:52, # CodeGen: 1
+**     Date/Time   : 2019-03-22, 20:02, # CodeGen: 2
 **     Abstract    :
 **         Implements a Driver for the MMA8451 accelerometer from Freescale.
 **     Settings    :
@@ -16,7 +16,7 @@
 **          Slave Address                                  : 1D
 **          I2C Bus                                        : GI2C1
 **          Wait                                           : WAIT1
-**          SDK                                            : MCUC1
+**          SDK                                            : MCUC_H1
 **          Temperature offset                             : 24
 **          Constant Offsets                               : Enabled
 **            X offset                                     : 0

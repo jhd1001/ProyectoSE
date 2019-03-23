@@ -154,11 +154,11 @@
 			</tr>
 			<tr>
 				<td>23</td><td>ADC0_DP1</td><td><small><i>same</i></small></td>
-				<td></td><td></td><td></td><td></td>
+				<td bgcolor='#F8FF9A'>ADC0</td><td bgcolor='#F8FF9A'>adc_se1</td><td bgcolor='#F8FF9A'>alt0</td><td bgcolor='#F8FF9A'>Input</td>
 			</tr>
 			<tr>
 				<td>24</td><td>ADC0_DM1</td><td><small><i>same</i></small></td>
-				<td></td><td></td><td></td><td></td>
+				<td bgcolor='#F8FF9A'>ADC0</td><td bgcolor='#F8FF9A'>adc_se20</td><td bgcolor='#F8FF9A'>alt0</td><td bgcolor='#F8FF9A'>Input</td>
 			</tr>
 			<tr>
 				<td>25</td><td>ADC1_DP1</td><td><small><i>same</i></small></td>
@@ -189,23 +189,17 @@
 				<td></td><td></td><td></td><td></td>
 			</tr>
 			<tr>
-				<td rowspan='6'>32</td><td rowspan='6'>VREFH</td><td rowspan='6'><small><i>same</i></small></td>
+				<td rowspan='3'>32</td><td rowspan='3'>VREFH</td><td rowspan='3'><small><i>same</i></small></td>
 				<td bgcolor='#F8FF9A'>ADC0</td><td bgcolor='#F8FF9A'>adc_vrefh</td><td bgcolor='#F8FF9A'>alt0</td><td bgcolor='#F8FF9A'>Input</td>
 			</tr>
 			<tr bgcolor='#F8FF9A'><td>ADC0</td><td>adc_se29</td><td>alt0</td><td>Input</td></tr>
 			<tr bgcolor='#F8FF9A'><td>ADC0</td><td>adc_dp29</td><td>alt0</td><td>Input</td></tr>
-			<tr bgcolor='#F8FF9A'><td>ADC1</td><td>adc_vrefh</td><td>alt0</td><td>Input</td></tr>
-			<tr bgcolor='#F8FF9A'><td>ADC1</td><td>adc_se29</td><td>alt0</td><td>Input</td></tr>
-			<tr bgcolor='#F8FF9A'><td>ADC1</td><td>adc_dp29</td><td>alt0</td><td>Input</td></tr>
 			<tr>
-				<td rowspan='6'>33</td><td rowspan='6'>VREFL</td><td rowspan='6'><small><i>same</i></small></td>
+				<td rowspan='3'>33</td><td rowspan='3'>VREFL</td><td rowspan='3'><small><i>same</i></small></td>
 				<td bgcolor='#F8FF9A'>ADC0</td><td bgcolor='#F8FF9A'>adc_vrefl</td><td bgcolor='#F8FF9A'>alt0</td><td bgcolor='#F8FF9A'>Input</td>
 			</tr>
 			<tr bgcolor='#F8FF9A'><td>ADC0</td><td>adc_se30</td><td>alt0</td><td>Input</td></tr>
 			<tr bgcolor='#F8FF9A'><td>ADC0</td><td>adc_dm29</td><td>alt0</td><td>Input</td></tr>
-			<tr bgcolor='#F8FF9A'><td>ADC1</td><td>adc_vrefl</td><td>alt0</td><td>Input</td></tr>
-			<tr bgcolor='#F8FF9A'><td>ADC1</td><td>adc_se30</td><td>alt0</td><td>Input</td></tr>
-			<tr bgcolor='#F8FF9A'><td>ADC1</td><td>adc_dm29</td><td>alt0</td><td>Input</td></tr>
 			<tr>
 				<td>34</td><td>VSSA</td><td><small><i>same</i></small></td>
 				<td></td><td></td><td></td><td></td>
@@ -252,11 +246,11 @@
 			</tr>
 			<tr>
 				<td>45</td><td>ADC0_SE17/PTE24/UART4_TX/I2C0_SCL/EWM_OUT_b</td><td><small><i>same</i></small></td>
-				<td></td><td></td><td></td><td></td>
+				<td bgcolor='#5FE356'>I2C0</td><td bgcolor='#5FE356'>i2c_sclk</td><td bgcolor='#5FE356'>alt5</td><td bgcolor='#5FE356'>Input/Output</td>
 			</tr>
 			<tr>
 				<td>46</td><td>ADC0_SE18/PTE25/UART4_RX/I2C0_SDA/EWM_IN</td><td><small><i>same</i></small></td>
-				<td></td><td></td><td></td><td></td>
+				<td bgcolor='#5FE356'>I2C0</td><td bgcolor='#5FE356'>i2c_sda</td><td bgcolor='#5FE356'>alt5</td><td bgcolor='#5FE356'>Input/Output</td>
 			</tr>
 			<tr>
 				<td>47</td><td>PTE26/ENET_1588_CLKIN/UART4_CTS_b/RTC_CLKOUT/USB_CLKIN</td><td><small><i>same</i></small></td>
@@ -538,7 +532,7 @@
 			</tr>
 			<tr>
 				<td>116</td><td>ADC1_SE7b/PTC11/LLWU_P11/I2C1_SDA/FTM3_CH7/I2S0_RXD1/FB_RW_b</td><td><small><i>same</i></small></td>
-				<td bgcolor='#F8FF9A'>ADC1</td><td bgcolor='#F8FF9A'>adc_seb7</td><td bgcolor='#F8FF9A'>alt0</td><td bgcolor='#F8FF9A'>Input</td>
+				<td></td><td></td><td></td><td></td>
 			</tr>
 			<tr>
 				<td>117</td><td>PTC12/UART4_RTS_b/FB_AD27/FTM3_FLT0</td><td><small><i>same</i></small></td>
@@ -2556,11 +2550,11 @@
 			</tr>
 			<tr>
 				<td>23</td><td>ADC0_DP1</td><td><small><i>same</i></small></td>
-				<td></td><td></td><td></td><td></td>
+				<td bgcolor='#F8FF9A'>ADC0</td><td bgcolor='#F8FF9A'>adc_se1</td><td bgcolor='#F8FF9A'>alt0</td><td bgcolor='#F8FF9A'>Input</td>
 			</tr>
 			<tr>
 				<td>24</td><td>ADC0_DM1</td><td><small><i>same</i></small></td>
-				<td></td><td></td><td></td><td></td>
+				<td bgcolor='#F8FF9A'>ADC0</td><td bgcolor='#F8FF9A'>adc_se20</td><td bgcolor='#F8FF9A'>alt0</td><td bgcolor='#F8FF9A'>Input</td>
 			</tr>
 			<tr>
 				<td>25</td><td>ADC1_DP1</td><td><small><i>same</i></small></td>
@@ -2591,23 +2585,17 @@
 				<td></td><td></td><td></td><td></td>
 			</tr>
 			<tr>
-				<td rowspan='6'>32</td><td rowspan='6'>VREFH</td><td rowspan='6'><small><i>same</i></small></td>
+				<td rowspan='3'>32</td><td rowspan='3'>VREFH</td><td rowspan='3'><small><i>same</i></small></td>
 				<td bgcolor='#F8FF9A'>ADC0</td><td bgcolor='#F8FF9A'>adc_vrefh</td><td bgcolor='#F8FF9A'>alt0</td><td bgcolor='#F8FF9A'>Input</td>
 			</tr>
 			<tr bgcolor='#F8FF9A'><td>ADC0</td><td>adc_se29</td><td>alt0</td><td>Input</td></tr>
 			<tr bgcolor='#F8FF9A'><td>ADC0</td><td>adc_dp29</td><td>alt0</td><td>Input</td></tr>
-			<tr bgcolor='#F8FF9A'><td>ADC1</td><td>adc_vrefh</td><td>alt0</td><td>Input</td></tr>
-			<tr bgcolor='#F8FF9A'><td>ADC1</td><td>adc_se29</td><td>alt0</td><td>Input</td></tr>
-			<tr bgcolor='#F8FF9A'><td>ADC1</td><td>adc_dp29</td><td>alt0</td><td>Input</td></tr>
 			<tr>
-				<td rowspan='6'>33</td><td rowspan='6'>VREFL</td><td rowspan='6'><small><i>same</i></small></td>
+				<td rowspan='3'>33</td><td rowspan='3'>VREFL</td><td rowspan='3'><small><i>same</i></small></td>
 				<td bgcolor='#F8FF9A'>ADC0</td><td bgcolor='#F8FF9A'>adc_vrefl</td><td bgcolor='#F8FF9A'>alt0</td><td bgcolor='#F8FF9A'>Input</td>
 			</tr>
 			<tr bgcolor='#F8FF9A'><td>ADC0</td><td>adc_se30</td><td>alt0</td><td>Input</td></tr>
 			<tr bgcolor='#F8FF9A'><td>ADC0</td><td>adc_dm29</td><td>alt0</td><td>Input</td></tr>
-			<tr bgcolor='#F8FF9A'><td>ADC1</td><td>adc_vrefl</td><td>alt0</td><td>Input</td></tr>
-			<tr bgcolor='#F8FF9A'><td>ADC1</td><td>adc_se30</td><td>alt0</td><td>Input</td></tr>
-			<tr bgcolor='#F8FF9A'><td>ADC1</td><td>adc_dm29</td><td>alt0</td><td>Input</td></tr>
 			<tr>
 				<td>34</td><td>VSSA</td><td><small><i>same</i></small></td>
 				<td></td><td></td><td></td><td></td>
@@ -2654,11 +2642,11 @@
 			</tr>
 			<tr>
 				<td>45</td><td>ADC0_SE17/PTE24/UART4_TX/I2C0_SCL/EWM_OUT_b</td><td><small><i>same</i></small></td>
-				<td></td><td></td><td></td><td></td>
+				<td bgcolor='#5FE356'>I2C0</td><td bgcolor='#5FE356'>i2c_sclk</td><td bgcolor='#5FE356'>alt5</td><td bgcolor='#5FE356'>Input/Output</td>
 			</tr>
 			<tr>
 				<td>46</td><td>ADC0_SE18/PTE25/UART4_RX/I2C0_SDA/EWM_IN</td><td><small><i>same</i></small></td>
-				<td></td><td></td><td></td><td></td>
+				<td bgcolor='#5FE356'>I2C0</td><td bgcolor='#5FE356'>i2c_sda</td><td bgcolor='#5FE356'>alt5</td><td bgcolor='#5FE356'>Input/Output</td>
 			</tr>
 			<tr>
 				<td>47</td><td>PTE26/ENET_1588_CLKIN/UART4_CTS_b/RTC_CLKOUT/USB_CLKIN</td><td><small><i>same</i></small></td>
@@ -2940,7 +2928,7 @@
 			</tr>
 			<tr>
 				<td>116</td><td>ADC1_SE7b/PTC11/LLWU_P11/I2C1_SDA/FTM3_CH7/I2S0_RXD1/FB_RW_b</td><td><small><i>same</i></small></td>
-				<td bgcolor='#F8FF9A'>ADC1</td><td bgcolor='#F8FF9A'>adc_seb7</td><td bgcolor='#F8FF9A'>alt0</td><td bgcolor='#F8FF9A'>Input</td>
+				<td></td><td></td><td></td><td></td>
 			</tr>
 			<tr>
 				<td>117</td><td>PTC12/UART4_RTS_b/FB_AD27/FTM3_FLT0</td><td><small><i>same</i></small></td>

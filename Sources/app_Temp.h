@@ -9,7 +9,7 @@
 #define SOURCES_APP_TEMP_H_
 
 
-extern void app_TempTask(void);
+extern bool app_TempTask(void);
 
 
 #endif /* SOURCES_APP_TEMP_H_ */

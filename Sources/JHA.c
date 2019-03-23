@@ -14,31 +14,11 @@
 
 TIMEREC hora; // hora del sistema
 uint8_t write_buf[12]; // mensaje de la hora del sistema
-extern double factor; // factor aplicable a toma de medidas
-extern float temperatura; // temperatura medida
-extern bool tFlag;
+extern int factor; // factor aplicable a toma de medidas
 char *mensaje = "introduzca la hora (hh:mm): ";
 char *mensaje2 = "Reloj establecido";
-char hora2[81];
 char datos[5];
 bool recibir;
-
-/*
- *  Calcula la temperatura ambiente
- */
-void JHA_Temperatura(void) {
-	word valor;
-	AD_H2_GetChanValue16(0, &valor); //
-	// se adapta al valor celsius.
-	// Rango permitido de 0 a 100 g.celsius
-	// se le suman 13 grados para ajuste a temperatura
-	// real
-	temperatura = 100 * valor / 65535.0 + 13.0;
-	char dst[5];
-	UTIL_H1_NumFloatToStr(dst, 5, temperatura, 1);
-	printf("T: %s\r\n", dst);
-	tFlag = TRUE;
-}
 
 void parseHora(char *datos, TIMEREC *hora) {
 	char h[] = {datos[0],datos[1],'\0'};
@@ -106,39 +86,17 @@ void JHA_SetHora(void) {
 
 }
 
-double getFactor(void) {
-	return factor;
-}
-
-/*
- *  Calcula el factor que hay que aplicar a la periodicidad de las medidas.
- *  Valores posibles:
- *  - 0.5 si 0 o < 32767 cuando va creciendo
- *  - 1.0 si <32767 cuando va decreciendo, si 32767 o si >32767 cuando va creciendo
- *  - 2.0 si 65535 o si >32767 cuando va decreciendo
- */
-void JHA_Factoriza(void) {
-	word valores;
-	AD_H1_GetValue16(&valores);
-	if (valores==0) factor = 0.5;
-	else if (valores==32767) factor = 1.0;
-	else if (valores==65535) factor = 2.0;
-	else if (valores < 32767 && factor == 2.0) factor = 1.0;
-	else if (valores > 32767 && factor == 0.5) factor = 1.0;
-	else factor = factor;
-}
-
 void JHA_Run(void) {
 	TmDt_H1_SetTime(0,0,0,0);
-	factor = 1.0;
+	factor = 1;
 	recibir = FALSE;
 }
 
 char * getHora(void) {
-	if (TmDt_H1_GetTime(&hora)!=ERR_OK) {
-		//Err();
-	}
 	write_buf[0] = '\0';
+	if (TmDt_H1_GetTime(&hora)!=ERR_OK) {
+		return write_buf;
+	}
 	UTIL_H1_strcatNum8u(write_buf, sizeof(write_buf), hora.Hour);
 	UTIL_H1_chcat(write_buf, sizeof(write_buf), ':');
 	UTIL_H1_strcatNum8u(write_buf, sizeof(write_buf), hora.Min);

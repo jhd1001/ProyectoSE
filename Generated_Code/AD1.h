@@ -7,7 +7,7 @@
 **     Version     : Component 01.697, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-22, 17:52, # CodeGen: 1
+**     Date/Time   : 2019-03-23, 17:54, # CodeGen: 5
 **     Abstract    :
 **         This device "ADC" implements an A/D converter,
 **         its control methods and interrupt/event handling procedure.
@@ -19,12 +19,15 @@
 **          Interrupt service/event                        : Enabled
 **            A/D interrupt                                : INT_ADC0
 **            A/D interrupt priority                       : medium priority
-**          A/D channels                                   : 2
+**          A/D channels                                   : 3
 **            Channel0                                     : 
 **              A/D channel (pin)                          : ADC0_DP1
 **              Mode select                                : Single Ended
 **            Channel1                                     : 
 **              A/D channel (pin)                          : ADC0_DM1
+**              Mode select                                : Single Ended
+**            Channel2                                     : 
+**              A/D channel (pin)                          : ADC0_SE12/PTB2/I2C0_SCL/UART0_RTS_b/ENET0_1588_TMR0/FTM0_FLT3
 **              Mode select                                : Single Ended
 **          A/D resolution                                 : 16 bits
 **          Conversion time                                : 19.230769 µs
@@ -42,9 +45,11 @@
 **            Low speed mode                               : This component disabled
 **            Slow speed mode                              : This component disabled
 **     Contents    :
-**         Measure    - byte AD1_Measure(bool WaitForResult);
-**         GetValue16 - byte AD1_GetValue16(word *Values);
-**         Calibrate  - byte AD1_Calibrate(bool WaitForResult);
+**         Measure        - byte AD1_Measure(bool WaitForResult);
+**         MeasureChan    - byte AD1_MeasureChan(bool WaitForResult, byte Channel);
+**         GetValue16     - byte AD1_GetValue16(word *Values);
+**         GetChanValue16 - byte AD1_GetChanValue16(byte Channel, word *Value);
+**         Calibrate      - byte AD1_Calibrate(bool WaitForResult);
 **
 **     Copyright : 1997 - 2015 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
@@ -100,7 +105,7 @@
 #include "PE_Const.h"
 #include "IO_Map.h"
 /* Include inherited beans */
-#include "AdcLdd1.h"
+#include "AdcLdd3.h"
 
 #include "Cpu.h"
 
@@ -110,11 +115,11 @@ extern "C" {
 
 /* This constant contains the number of channels in the "A/D channel list"
    group */
-#define AD1_CHANNEL_COUNT               AdcLdd1_CHANNEL_COUNT
+#define AD1_CHANNEL_COUNT               AdcLdd3_CHANNEL_COUNT
 
 
 
-#define AD1_SAMPLE_GROUP_SIZE 2U
+#define AD1_SAMPLE_GROUP_SIZE 3U
 void AD1_HWEnDi(void);
 /*
 ** ===================================================================
@@ -163,6 +168,39 @@ byte AD1_Measure(bool WaitForResult);
 */
 /* ===================================================================*/
 
+byte AD1_MeasureChan(bool WaitForResult,byte Channel);
+/*
+** ===================================================================
+**     Method      :  AD1_MeasureChan (component ADC)
+*/
+/*!
+**     @brief
+**         This method performs measurement on one channel. (Note: If
+**         the [number of conversions] is more than one the conversion
+**         of the A/D channel is performed specified number of times.)
+**     @param
+**         WaitForResult   - Wait for a result of
+**                           conversion. If the [interrupt service] is
+**                           disabled and at the same time a [number of
+**                           conversions] is greater than 1, the
+**                           WaitForResult parameter is ignored and the
+**                           method waits for each result every time.
+**     @param
+**         Channel         - Channel number. If only one
+**                           channel in the component is set this
+**                           parameter is ignored, because the parameter
+**                           is set inside this method.
+**     @return
+**                         - Error code, possible codes:
+**                           ERR_OK - OK
+**                           ERR_SPEED - This device does not work in
+**                           the active speed mode
+**                           ERR_DISABLED - Device is disabled
+**                           ERR_BUSY - A conversion is already running
+**                           ERR_RANGE - Parameter "Channel" out of range
+*/
+/* ===================================================================*/
+
 byte AD1_GetValue16(word *Values);
 /*
 ** ===================================================================
@@ -185,6 +223,42 @@ byte AD1_GetValue16(word *Values);
 **                           the active speed mode
 **                           ERR_NOTAVAIL - Requested value not
 **                           available
+**                           ERR_OVERRUN - External trigger overrun flag
+**                           was detected after the last value(s) was
+**                           obtained (for example by GetValue). This
+**                           error may not be supported on some CPUs
+**                           (see generated code).
+*/
+/* ===================================================================*/
+
+byte AD1_GetChanValue16(byte Channel, word *Value);
+/*
+** ===================================================================
+**     Method      :  AD1_GetChanValue16 (component ADC)
+*/
+/*!
+**     @brief
+**         This method returns the last measured value of the required
+**         channel. Compared with [GetChanValue] method this method
+**         returns more accurate result if the [number of conversions]
+**         is greater than 1 and [AD resolution] is less than 16 bits.
+**         In addition, the user code dependency on [AD resolution] is
+**         eliminated.
+**     @param
+**         Channel         - Channel number. If only one
+**                           channel in the component is set then this
+**                           parameter is ignored.
+**     @param
+**         Value           - Pointer to the measured value.
+**     @return
+**                         - Error code, possible codes:
+**                           ERR_OK - OK
+**                           ERR_SPEED - This device does not work in
+**                           the active speed mode
+**                           ERR_NOTAVAIL - Requested value not
+**                           available
+**                           ERR_RANGE - Parameter "Channel" out of
+**                           range
 **                           ERR_OVERRUN - External trigger overrun flag
 **                           was detected after the last value(s) was
 **                           obtained (for example by GetValue). This
@@ -220,7 +294,7 @@ byte AD1_Calibrate(bool WaitForResult);
 ** ===================================================================
 */
 
-void AdcLdd1_OnMeasurementComplete(LDD_TUserData *UserDataPtr);
+void AdcLdd3_OnMeasurementComplete(LDD_TUserData *UserDataPtr);
 
 void AD1_Init(void);
 /*

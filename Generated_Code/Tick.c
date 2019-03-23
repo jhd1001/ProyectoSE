@@ -7,7 +7,7 @@
 **     Version     : Component 02.161, Driver 01.02, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2019-03-22, 17:52, # CodeGen: 1
+**     Date/Time   : 2019-03-22, 20:02, # CodeGen: 2
 **     Abstract    :
 **         This component "TimerInt" implements a periodic interrupt.
 **         When the component and its events are enabled, the "OnInterrupt"
@@ -101,7 +101,7 @@ extern "C" {
 **         This method is internal. It is used by Processor Expert only.
 ** ===================================================================
 */
-void TimerIntLdd1_OnInterrupt(LDD_TUserData *UserDataPtr)
+void TimerIntLdd3_OnInterrupt(LDD_TUserData *UserDataPtr)
 {
   (void)UserDataPtr;                   /* Parameter is not used, suppress unused argument warning */
   Tick_OnInterrupt();                  /* Invoke OnInterrupt event */

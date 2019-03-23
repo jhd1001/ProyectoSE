@@ -9,7 +9,7 @@
 #define SOURCES_APP_LUM_H_
 
 
-extern void app_LumTask(void);
+extern bool app_LumTask(void);
 
 
 #endif /* SOURCES_APP_LUM_H_ */

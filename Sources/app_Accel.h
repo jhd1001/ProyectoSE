@@ -9,6 +9,6 @@
 #define SOURCES_APP_ACCEL_H_
 
 
-extern void app_AccelTask(void);
+extern bool app_AccelTask(void);
 
 #endif /* SOURCES_APP_ACCEL_H_ */

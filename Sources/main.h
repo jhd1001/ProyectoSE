@@ -9,7 +9,4 @@
 #define SOURCES_MAIN_H_
 
 
-extern void ISR(void);
-
-
 #endif /* SOURCES_MAIN_H_ */
