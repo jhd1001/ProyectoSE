@@ -154,7 +154,6 @@ void AS_H1_OnTxChar(void)
 */
 void AS_H1_OnFreeTxBuf(void)
 {
-	printf("ultimo caracter transmitido\r\n");
   /* Write your code here ... */
 }
 
