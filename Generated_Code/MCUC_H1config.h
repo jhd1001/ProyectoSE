@@ -9,14 +9,12 @@
 #define __MCUC_H1_CONFIG_H
 
 /* identification of CPU/core used. __CORTEX_M is defined in CMSIS-Core.
-   Otherwise CPU Family is set automatically by Processor Expert: detected: Kinetis (supported: "Kinetis", "S32K", "HCS08")
+   Otherwise CPU Family is set automatically by Processor Expert: detected: Kinetis (supported: "Kinetis", "HCS08")
 */
 #define MCUC_H1_CONFIG_CPU_IS_ARM_CORTEX_M    (1 || defined(__CORTEX_M))
   /*!< 1: ARM Cortex-M family, 0 otherwise */
 #define MCUC_H1_CONFIG_CPU_IS_KINETIS         (1 && MCUC_H1_CONFIG_CPU_IS_ARM_CORTEX_M)
   /*!< 1: NXP Kinetis CPU family, 0: otherwise */
-#define MCUC_H1_CONFIG_CPU_IS_S32K            (0 && MCUC_H1_CONFIG_CPU_IS_ARM_CORTEX_M)
-  /*!< 1: NXP S32K CPU family, 0: otherwise */
 #define MCUC_H1_CONFIG_CPU_IS_LPC             (0 && MCUC_H1_CONFIG_CPU_IS_ARM_CORTEX_M)
   /*!< 1: NXP LPC CPU family, 0: otherwise */
 #define MCUC_H1_CONFIG_CPU_IS_STM32           (0 && MCUC_H1_CONFIG_CPU_IS_ARM_CORTEX_M)
@@ -32,9 +30,6 @@
 #define MCUC_H1_CONFIG_FPU_USED      (1 || (defined(__FPU_USED) && (__FPU_USED)==1))
   /*!< 1: using floating point unit, 0: otherwise */
 
-/* macro for little and big endianess. ARM is little endian */
-#define MCUC_H1_CONFIG_CPU_IS_LITTLE_ENDIAN   (MCUC_H1_CONFIG_CPU_IS_ARM_CORTEX_M)
-
 /* Identifiers used to identify the SDK */
 #define MCUC_H1_CONFIG_SDK_GENERIC             0
   /*!< using a generic API/SDK */
@@ -46,8 +41,6 @@
   /*!< using NXP Kinetis SDK V2.0 */
 #define MCUC_H1_CONFIG_SDK_MCUXPRESSO_2_0      4
   /*!< same as Kinetis SDK v2.0 */
-#define MCUC_H1_CONFIG_SDK_S32K                5
-  /*!< SDK for S32K */
 
 /* specify the SDK and API used */
 #ifndef MCUC_H1_CONFIG_SDK_VERSION_USED
@@ -60,18 +53,10 @@
 #endif
 #endif
 
-
-/* Configuration macro if FreeRTOS is used */
-#ifndef MCUC_H1_CONFIG_SDK_USE_FREERTOS
-  #define MCUC_H1_CONFIG_SDK_USE_FREERTOS         (0)
-    /*!< 1: Use FreeRTOS; 0: no FreeRTOS used */
-#endif
-
 /* special macro to identify a set of SDKs used */
 #define MCUC_H1_CONFIG_NXP_SDK_USED              (   (MCUC_H1_CONFIG_SDK_VERSION_USED==MCUC_H1_CONFIG_SDK_KINETIS_1_3) \
                                                   || (MCUC_H1_CONFIG_SDK_VERSION_USED==MCUC_H1_CONFIG_SDK_KINETIS_2_0) \
                                                   || (MCUC_H1_CONFIG_SDK_VERSION_USED==MCUC_H1_CONFIG_SDK_MCUXPRESSO_2_0) \
-                                                  || (MCUC_H1_CONFIG_SDK_VERSION_USED==MCUC_H1_CONFIG_SDK_S32K) \
                                                  )
   /*!< Using one of the Freescale/NXP SDKs */
 

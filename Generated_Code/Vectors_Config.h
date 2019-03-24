@@ -82,6 +82,8 @@
 #include "FX1.h"
 #include "AD1.h"
 #include "AdcLdd3.h"
+#include "Bit_E1.h"
+#include "BitIoLdd1.h"
 #include "Events.h"
 
 #ifdef __cplusplus

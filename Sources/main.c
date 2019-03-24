@@ -60,11 +60,14 @@
 #include "WAIT1.h"
 #include "CI2C1.h"
 #include "TU1.h"
+#include "TU_E1.h"
 #include "Tick.h"
 #include "TimerIntLdd3.h"
 #include "FX1.h"
 #include "AD1.h"
 #include "AdcLdd3.h"
+#include "Bit_E1.h"
+#include "BitIoLdd1.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"
@@ -81,8 +84,6 @@
 #include "app_Selector.h"
 #include "app_Temp.h"
 
-//float temperatura;
-//bool tFlag = FALSE;
 unsigned char ISR_FLAG;
 uint16_t x, y, z;
 uint16_t Luminosidad;
@@ -105,7 +106,6 @@ int main(void)
   PORT_PDD_SetPinPullSelect(PORTE_BASE_PTR, 6, PORT_PDD_PULL_DOWN);
   PORT_PDD_SetPinPullEnable(PORTE_BASE_PTR, 6, PORT_PDD_PULL_ENABLE);
   if (FAT_E1_Init()!=ERR_OK) return -1; /* initialize FAT driver */
-
   if (FAT_E1_mount(&fileSystemObject, (const TCHAR*)"0", 1) != FR_OK) return -1; /* mount file system */
 
   JHA_Run(); // inicializa valores de potenciometro
@@ -126,8 +126,9 @@ int main(void)
 				else if (lumOK)
 					LogToSDCardL(x*100/0xFFFF, y*100/0xFFFF, z*100/0xFFFF, Luminosidad);
 				else
-					LogToSDCard(x, y, z);
-			}		}
+					LogToSDCard(x*100/0xFFFF, y*100/0xFFFF, z*100/0xFFFF);
+			}
+		}
   }
 
   /*** Don't write any code pass this line, or it will be deleted during code generation. ***/
